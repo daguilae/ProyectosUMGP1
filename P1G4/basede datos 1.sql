@@ -11,13 +11,12 @@ Estatus_Alumno varchar (1)
 )Engine = InnoDB ;
 CREATE TABLE maestros
 (
-Codigo_Maestros varchar(5) PRIMARY KEY,
-nombre_Maestros Varchar (45) ,
-direccion_Maestros  VARCHAR (45) ,
-telefono_Maestros Varchar (45),
-email_Maestros varchar (20),
-Estatus_Maestros varchar (1),
-foreign key (codigo_Maestros) references alumnos (carnet_Alumno)
+codigo_maestros varchar(5) PRIMARY KEY,
+nombre_maestros Varchar(45) ,
+direccion_maestros  VARCHAR(45) ,
+telefono_maestros Varchar(45),
+email_maestros varchar(20),
+estatus_maestros varchar(1)
 )Engine = InnoDB ;
 
 CREATE TABLE facultad
@@ -93,14 +92,20 @@ nota_asignacionalumon float (10,2)
 
 CREATE TABLE asignacionamaestros
 (
-codico_carrera varchar(15) PRIMARY KEY,
-condigo_sede Varchar (45) ,
-codigo_jornada  VARCHAR (45) ,
-codigo_seccion Varchar (45),
-codigo_aula varchar (20),
-codigo_curso varchar (19),
-cogigo_maestrolumno varchar (19),
-nota_asignacionalumon float (10,2)
+codigo_carrera varchar(5) PRIMARY KEY,
+codigo_sede varchar(5) ,
+codigo_jornada  VARCHAR(5),
+codigo_seccion Varchar(5),
+codigo_aula varchar(5),
+codigo_curso varchar(5),
+codigo_maestrolumno varchar(5),
+foreign key (codigo_Carreras) references Carreras(codigo_Carreras),
+foreign key (codigo_Sedes) references sedes(codigo_Sedes),
+foreign key (codigo_jornada) references jornadas(codigo_jornada),
+foreign key (codigo_seccion) references secciones(codigo_seccion),
+foreign key (codigo_aulas) references aulas(codigo_aulas),
+foreign key (codigo_Cursos) references Cursos(codigo_Cursos),
+foreign key (codigo_maestros) references maestros(codigo_maestros)
 )Engine = InnoDB ;
 
 
