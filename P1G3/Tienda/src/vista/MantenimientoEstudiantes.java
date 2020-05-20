@@ -22,7 +22,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String user = "root";
     private static final String pass = "";
-    private static final String url = "jdbc:mysql://localhost:3307/Proyecto";
+    private static final String url = "jdbc:mysql://localhost:3306/Proyecto";
     String cod;
 
     public void conector() {
@@ -247,7 +247,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into alumnos values(?,?,?,?,?,?)");
 
             pst.setString(1, txtcarnet.getText().trim());
@@ -277,7 +277,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
         try {
             String ID = txtbuscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("update alumnos set carnet_alumno = ?, nombre_alumno = ?, direccion_alumno = ?, telefono_alumno= ?, email_alumno= ?, estatus_alumno= ? where carnet_alumno=?");
 
             pst.setString(1, txtcarnet.getText().trim());
@@ -305,7 +305,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from alumnos where carnet_alumno = ?");
             pst.setString(1, txtbuscar.getText().trim());
 
@@ -331,7 +331,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from alumnos where carnet_alumno = ?");
 
             pst.setString(1, txtbuscar.getText().trim());
