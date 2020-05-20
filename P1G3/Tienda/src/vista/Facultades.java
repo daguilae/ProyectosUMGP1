@@ -60,6 +60,11 @@ public class Facultades extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -203,6 +208,26 @@ public class Facultades extends javax.swing.JInternalFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         try {
+            String Codigo = Buscar.getText().trim();
+
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update facultades set codigo_facultad= ?,nombre_facultad = ?,estatus_facultad = ?, codigo_facultad = "+ Codigo);
+
+            pst.setString(1, txtcodigo.getText().trim());
+            pst.setString(2, txtnombre.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
+           
+            pst.executeUpdate();
+           
+           
+        }catch (Exception e) {
+            
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
