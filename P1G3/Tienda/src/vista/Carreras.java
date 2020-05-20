@@ -64,6 +64,11 @@ public class Carreras extends javax.swing.JInternalFrame {
         });
 
         jButton2.setText("Modificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +217,27 @@ public class Carreras extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         try {
+            
+            String Codigo = Buscar.getText().trim();
+
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update carreras set codigo_carrera= ?,nombre_carrera = ?,codigo_facultad = ? , estatus_carrera = ?, codigo_maestro = "+ Codigo);
+
+            
+            pst.setString(1, txtcodigo.getText().trim());
+            pst.setString(2, txtcarrera.getText().trim());
+            pst.setString(3, txtfacultad.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
+           
+            pst.executeUpdate();
+           
+        }catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
