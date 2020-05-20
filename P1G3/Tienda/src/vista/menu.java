@@ -13,7 +13,7 @@ import modelo.Usuarios;
 
 public class menu extends javax.swing.JFrame {
 private MantenimientoEstudiantes NuevaVentana;
-private MantenimientoMaestros Ventana;
+
 private Facultades Ventana1;
 private Carreras Ventana2;
 private Cursos Ventana3;
@@ -187,8 +187,7 @@ private Jornadas Ventana7;
 
     private void subMenuEditProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuEditProductoActionPerformed
         // TODO add your handling code here:
-        Ventana = new MantenimientoMaestros();
-        jDesktopPane1.add(Ventana);
+        
     }//GEN-LAST:event_subMenuEditProductoActionPerformed
 
     private void subMenuAddProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuAddProvedorActionPerformed
