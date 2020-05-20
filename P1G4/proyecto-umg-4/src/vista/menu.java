@@ -14,6 +14,7 @@ public class menu extends javax.swing.JFrame {
 private MantenimientodeMaestros NuevaVentana8;
 private AsignaciondeCursosMaestros NuevaVentana9;
 private Aulas NuevaAulas;
+private Secciones NuevaSecciones;
     Usuarios mod;
 
     public menu() {
@@ -50,7 +51,7 @@ private Aulas NuevaAulas;
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         menuProveedores = new javax.swing.JMenu();
         subMenuAddProvedor = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -103,6 +104,11 @@ private Aulas NuevaAulas;
         menuProductos.add(jMenuItem1);
 
         jMenuItem6.setText("Secciones");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         menuProductos.add(jMenuItem6);
 
         jMenuItem7.setText("Jornadas");
@@ -111,13 +117,13 @@ private Aulas NuevaAulas;
         jMenuItem8.setText("Sedes");
         menuProductos.add(jMenuItem8);
 
-        jMenuItem9.setText("Aulas");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem10.setText("Aulas");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                jMenuItem10ActionPerformed(evt);
             }
         });
-        menuProductos.add(jMenuItem9);
+        menuProductos.add(jMenuItem10);
 
         jMenuBar1.add(menuProductos);
 
@@ -217,11 +223,19 @@ private Aulas NuevaAulas;
         jDesktopPane1.add(NuevaVentana9);
     }//GEN-LAST:event_subMenuAddProvedor1ActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // area de secciones 
+        NuevaSecciones = new Secciones();
+        jDesktopPane1.add(NuevaSecciones);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        NuevaAulas = new Aulas();
-        jDesktopPane1.add(NuevaAulas);
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+       NuevaAulas = new Aulas();
+       jDesktopPane1.add(NuevaAulas);
+       
+        
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -259,6 +273,7 @@ private Aulas NuevaAulas;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -266,7 +281,6 @@ private Aulas NuevaAulas;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenu menuProductos;
     private javax.swing.JMenu menuProveedores;

@@ -6,16 +6,17 @@
 package vista;
 import java.sql.*;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author familia Sipaque
  */
-public class Aulas extends javax.swing.JInternalFrame {
+public class Secciones extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Aulas
+     * Creates new form Secciones
      */
-    public Aulas() {
+    public Secciones() {
         initComponents();
     }
 
@@ -28,34 +29,24 @@ public class Aulas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txt_1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         txt_3 = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         txt_2 = new javax.swing.JTextField();
         txt_buscar = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         label_status = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txt_1 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setVisible(true);
-
-        jButton6.setText("Eliminar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel11.setText("codigo Aula:");
 
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,18 +55,8 @@ public class Aulas extends javax.swing.JInternalFrame {
             }
         });
 
-        label_status.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        label_status.setForeground(new java.awt.Color(255, 51, 51));
-
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("Estatus Aula:");
-
-        jButton2.setText("Buscar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("Estatus Secciones:");
 
         jButton5.setText("Modificar");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -85,10 +66,30 @@ public class Aulas extends javax.swing.JInternalFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("Nombre Aula:  ");
+        jLabel3.setText("Nombre Secciones:  ");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setText("Ingrese el codigo del Aula :");
+        jLabel13.setText("Ingrese el codigo del  Secciones:");
+
+        jButton6.setText("Eliminar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel11.setText("codigo Secciones:");
+
+        label_status.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        label_status.setForeground(new java.awt.Color(255, 51, 51));
+
+        jButton2.setText("Buscar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,16 +122,16 @@ public class Aulas extends javax.swing.JInternalFrame {
                         .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 99, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_status, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addComponent(label_status, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap(37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(txt_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,39 +154,18 @@ public class Aulas extends javax.swing.JInternalFrame {
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addComponent(label_status, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addComponent(label_status, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // Funcion donde se elimanar cualquier registro
-
-        try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete from aulas where ID = ?");
-
-            pst.setString(1, txt_buscar.getText().trim());
-            pst.executeUpdate();
-
-            txt_1.setText("");
-            txt_2.setText("");
-            txt_3.setText("");
-
-            label_status.setText("Registro  eliminado.");
-
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // se registran todo los empleados
+        // se registran todas secciones 
         try {
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
-            PreparedStatement pst = cn.prepareStatement("insert into aulas values(?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("insert into secciones values(?,?,?,?)");
 
             pst.setString(1, "0");
             pst.setString(2, txt_1.getText().trim());
@@ -204,36 +184,12 @@ public class Aulas extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // Funcion de donde se busca los registros y buscar si esta registrado o no
-        try {
-            Connection cn;
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from aulas where ID = ?");
-            pst.setString(1, txt_buscar.getText().trim());
-            ResultSet rs = pst.executeQuery();
-
-            if (rs.next()) {
-
-                txt_1.setText(rs.getString("codigo_aulas"));
-                txt_2.setText(rs.getString("nombre_aulas"));
-                txt_3.setText(rs.getString("estatus_aulas"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, " no registrado.");
-            }
-
-        } catch (Exception e) {
-
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         try {
             String ID = txt_buscar.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update aulas set codigo_aulas = ?, nombre_aulas = ?, estatus_aulas = ?  where ID = " + ID);
+            PreparedStatement pst = cn.prepareStatement("update secciones set codigo_secciones = ?, nombre_secciones = ?, estatus_secciones = ?  where ID = " + ID);
 
             pst.setString(1, txt_1.getText().trim());
             pst.setString(2, txt_2.getText().trim());
@@ -246,6 +202,50 @@ public class Aulas extends javax.swing.JInternalFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // El es la funcion de Eliminar algun registro de secciones
+
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            PreparedStatement pst = cn.prepareStatement("delete from secciones where ID = ?");
+
+            pst.setString(1, txt_buscar.getText().trim());
+            pst.executeUpdate();
+
+            txt_1.setText("");
+            txt_2.setText("");
+            txt_3.setText("");
+
+            label_status.setText("Registro  eliminado.");
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // Funcion en donde se buscan todos los registros 
+        try {
+            Connection cn;
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from secciones where ID = ?");
+            pst.setString(1, txt_buscar.getText().trim());
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+
+                txt_1.setText(rs.getString("codigo_secciones"));
+                txt_2.setText(rs.getString("nombre_secciones"));
+                txt_3.setText(rs.getString("estatus_secciones"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "No registrado.");
+            }
+
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
