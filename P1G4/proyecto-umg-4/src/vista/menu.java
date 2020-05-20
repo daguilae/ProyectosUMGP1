@@ -13,6 +13,7 @@ import modelo.Usuarios;
 public class menu extends javax.swing.JFrame {
 private MantenimientodeMaestros NuevaVentana8;
 private AsignaciondeCursosMaestros NuevaVentana9;
+private Aulas NuevaAulas;
     Usuarios mod;
 
     public menu() {
@@ -93,7 +94,7 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         });
         menuProductos.add(subMenuEditProducto);
 
-        jMenuItem1.setText("Cusos");
+        jMenuItem1.setText("Cursos");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -111,6 +112,11 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         menuProductos.add(jMenuItem8);
 
         jMenuItem9.setText("Aulas");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         menuProductos.add(jMenuItem9);
 
         jMenuBar1.add(menuProductos);
@@ -210,6 +216,12 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         NuevaVentana9 = new AsignaciondeCursosMaestros();
         jDesktopPane1.add(NuevaVentana9);
     }//GEN-LAST:event_subMenuAddProvedor1ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        NuevaAulas = new Aulas();
+        jDesktopPane1.add(NuevaAulas);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
