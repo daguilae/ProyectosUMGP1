@@ -5,6 +5,12 @@
  */
 package vista;
 
+import java.util.HashSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.Alumnos;
+import modelo.SQLAlumnos;
+
 /**
  *
  * @author diego
@@ -37,20 +43,21 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        TxtCarnet = new javax.swing.JTextField();
+        TxtNombre = new javax.swing.JTextField();
+        TxtDireccion = new javax.swing.JTextField();
+        TxtTelefono = new javax.swing.JTextField();
+        TxtEmail = new javax.swing.JTextField();
+        TxtEstatus = new javax.swing.JTextField();
+        BtnCrear = new javax.swing.JButton();
+        BtnEliminar = new javax.swing.JButton();
+        BtnModificar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TbBusqueda = new javax.swing.JTable();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        TxtBuscar = new javax.swing.JTextField();
+        BtnBuscar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setClosable(true);
@@ -94,72 +101,91 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Estatus Alumno:");
 
-        jTextField1.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        TxtCarnet.setBackground(new java.awt.Color(51, 51, 51));
+        TxtCarnet.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtCarnet.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField2.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        TxtNombre.setBackground(new java.awt.Color(51, 51, 51));
+        TxtNombre.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtNombre.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextField3.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField3.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        TxtDireccion.setBackground(new java.awt.Color(51, 51, 51));
+        TxtDireccion.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtDireccion.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextField4.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField4.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
+        TxtTelefono.setBackground(new java.awt.Color(51, 51, 51));
+        TxtTelefono.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtTelefono.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextField5.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField5.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
+        TxtEmail.setBackground(new java.awt.Color(51, 51, 51));
+        TxtEmail.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtEmail.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextField6.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField6.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
+        TxtEstatus.setBackground(new java.awt.Color(51, 51, 51));
+        TxtEstatus.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtEstatus.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(0, 30, 60));
-        jButton1.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Crear");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCrear.setBackground(new java.awt.Color(0, 30, 60));
+        BtnCrear.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        BtnCrear.setForeground(new java.awt.Color(255, 255, 255));
+        BtnCrear.setText("Crear");
+        BtnCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCrearActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(0, 30, 60));
-        jButton2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Eliminar");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnEliminar.setBackground(new java.awt.Color(0, 30, 60));
+        BtnEliminar.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        BtnEliminar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnEliminar.setText("Eliminar");
+        BtnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jButton3.setBackground(new java.awt.Color(0, 30, 60));
-        jButton3.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Modificar");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnModificar.setBackground(new java.awt.Color(0, 30, 60));
+        BtnModificar.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        BtnModificar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnModificar.setText("Modificar");
+        BtnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TbBusqueda.setBackground(new java.awt.Color(204, 204, 204));
+        TbBusqueda.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        TbBusqueda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+
             },
             new String [] {
-
+                "Carnet", "Nombre", "Dirección", "Teléfono", "Email", "Estado"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TbBusqueda);
 
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Buscar:");
 
-        jTextField7.setBackground(new java.awt.Color(51, 51, 51));
-        jTextField7.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(255, 255, 255));
+        TxtBuscar.setBackground(new java.awt.Color(51, 51, 51));
+        TxtBuscar.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
+        TxtBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        TxtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtBuscarActionPerformed(evt);
+            }
+        });
+
+        BtnBuscar.setBackground(new java.awt.Color(0, 30, 60));
+        BtnBuscar.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        BtnBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        BtnBuscar.setText("Buscar");
+        BtnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -168,12 +194,14 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(TxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BtnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -182,7 +210,8 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
@@ -196,11 +225,11 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BtnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(BtnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
+                        .addComponent(BtnModificar))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -216,12 +245,12 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField1))))
+                            .addComponent(TxtTelefono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(TxtDireccion, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TxtEstatus, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtEmail)
+                            .addComponent(TxtCarnet))))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -235,33 +264,33 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtCarnet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(9, 9, 9)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addGap(8, 8, 8)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TxtEstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
-                .addContainerGap(20, Short.MAX_VALUE))
+                            .addComponent(BtnCrear)
+                            .addComponent(BtnEliminar)
+                            .addComponent(BtnModificar))))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -318,11 +347,56 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BtnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCrearActionPerformed
+        SQLAlumnos transactAlumnos = new SQLAlumnos();
+        Alumnos objAlumnos = new Alumnos();
+        
+        try{
+            objAlumnos.setCarnetAlumno(TxtCarnet.getText());
+            objAlumnos.setNombreAlumno(TxtNombre.getText());
+            objAlumnos.setDireccionAlumno(TxtDireccion.getText());
+            objAlumnos.setTelefonoAlumno(TxtTelefono.getText());
+            objAlumnos.setEmailAlumno(TxtEmail.getText());
+            objAlumnos.setEstAlumno(TxtEstatus.getText());
+            
+            if(transactAlumnos.registrarAlumnos(objAlumnos)){
+                JOptionPane.showMessageDialog(null, "ALUMNO REGISTRADO!");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "ERROR AL REGISTRAR!");
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex.toString());
+        }
+    }//GEN-LAST:event_BtnCrearActionPerformed
+
+    private void TxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBuscarActionPerformed
+        
+    }//GEN-LAST:event_TxtBuscarActionPerformed
+
+    private void BtnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarActionPerformed
+        DefaultTableModel modeloClearT = (DefaultTableModel) TbBusqueda.getModel();
+        modeloClearT.setRowCount(0);
+        TbBusqueda.setModel(modeloClearT);
+        SQLAlumnos busquedaAlumnos = new SQLAlumnos();
+        busquedaAlumnos.mostrarRegistros(TbBusqueda, TxtBuscar.getText());
+    }//GEN-LAST:event_BtnBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton BtnBuscar;
+    private javax.swing.JButton BtnCrear;
+    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnModificar;
+    private javax.swing.JTable TbBusqueda;
+    private javax.swing.JTextField TxtBuscar;
+    private javax.swing.JTextField TxtCarnet;
+    private javax.swing.JTextField TxtDireccion;
+    private javax.swing.JTextField TxtEmail;
+    private javax.swing.JTextField TxtEstatus;
+    private javax.swing.JTextField TxtNombre;
+    private javax.swing.JTextField TxtTelefono;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -336,13 +410,5 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
