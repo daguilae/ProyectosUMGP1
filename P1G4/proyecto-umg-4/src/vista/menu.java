@@ -61,6 +61,8 @@ private Secciones NuevaSecciones;
         menuProveedores2 = new javax.swing.JMenu();
         subMenuAddProvedor2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -175,6 +177,20 @@ private Secciones NuevaSecciones;
 
         jMenuBar1.add(menuProveedores2);
 
+        jMenu3.setForeground(new java.awt.Color(255, 0, 0));
+        jMenu3.setText("Salir ");
+        jMenu3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+
+        jMenuItem9.setText("Salir del Sistema");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem9);
+
+        jMenuBar1.add(jMenu3);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -237,6 +253,11 @@ private Secciones NuevaSecciones;
         
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -271,6 +292,7 @@ private Secciones NuevaSecciones;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -281,6 +303,7 @@ private Secciones NuevaSecciones;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenu menuProductos;
     private javax.swing.JMenu menuProveedores;
