@@ -14,6 +14,13 @@ import modelo.Usuarios;
 public class menu extends javax.swing.JFrame {
 private MantenimientoEstudiantes NuevaVentana;
 private MantenimientoMaestros Ventana;
+private Facultades Ventana1;
+private Carreras Ventana2;
+private Cursos Ventana3;
+private Secciones Ventana4;
+private Sedes Ventana5;
+private aulas Ventana6;
+private Jornadas Ventana7;
     Usuarios mod;
 
     public menu() {
@@ -47,6 +54,13 @@ private MantenimientoMaestros Ventana;
         subMenuEditProducto = new javax.swing.JMenuItem();
         menuProveedores = new javax.swing.JMenu();
         subMenuAddProvedor = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -63,7 +77,7 @@ private MantenimientoMaestros Ventana;
             .addGap(0, 504, Short.MAX_VALUE)
         );
 
-        menuProductos.setText("Productos");
+        menuProductos.setText("Abrir");
 
         subMenuAddProducto.setText("Mantenimiento Estudiantes");
         subMenuAddProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -83,12 +97,69 @@ private MantenimientoMaestros Ventana;
 
         jMenuBar1.add(menuProductos);
 
-        menuProveedores.setText("Proveedores");
+        menuProveedores.setText("Catalogos");
 
-        subMenuAddProvedor.setText("Agregar");
+        subMenuAddProvedor.setText("Facultades");
+        subMenuAddProvedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuAddProvedorActionPerformed(evt);
+            }
+        });
         menuProveedores.add(subMenuAddProvedor);
 
+        jMenuItem1.setText("Carreras");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuProveedores.add(jMenuItem1);
+
+        jMenuItem2.setText("Cursos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menuProveedores.add(jMenuItem2);
+
+        jMenuItem4.setText("Secciones");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        menuProveedores.add(jMenuItem4);
+
         jMenuBar1.add(menuProveedores);
+
+        jMenu1.setText("Procesos");
+
+        jMenuItem5.setText("Sedes");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem5);
+
+        jMenuItem6.setText("Aulas");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
+
+        jMenuItem7.setText("Jornadas");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -119,6 +190,48 @@ private MantenimientoMaestros Ventana;
         Ventana = new MantenimientoMaestros();
         jDesktopPane1.add(Ventana);
     }//GEN-LAST:event_subMenuEditProductoActionPerformed
+
+    private void subMenuAddProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuAddProvedorActionPerformed
+        // TODO add your handling code here:
+        Ventana1 = new Facultades();
+        jDesktopPane1.add(Ventana1);
+    }//GEN-LAST:event_subMenuAddProvedorActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+         Ventana2 = new Carreras();
+        jDesktopPane1.add(Ventana2);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        Ventana3 = new Cursos();
+        jDesktopPane1.add(Ventana3);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        Ventana4 = new Secciones();
+        jDesktopPane1.add(Ventana4);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        Ventana5 = new Sedes();
+        jDesktopPane1.add(Ventana5);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        Ventana6 = new aulas();
+        jDesktopPane1.add(Ventana6);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        Ventana7 = new Jornadas();
+        jDesktopPane1.add(Ventana7);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -154,8 +267,15 @@ private MantenimientoMaestros Ventana;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenu menuProductos;
     private javax.swing.JMenu menuProveedores;
     private javax.swing.JMenuItem subMenuAddProducto;

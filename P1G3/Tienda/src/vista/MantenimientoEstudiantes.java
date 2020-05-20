@@ -279,7 +279,7 @@ public class MantenimientoEstudiantes extends javax.swing.JInternalFrame {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("update alumnos set nombre_alumno= ?,direccion_alumno = ?,telefono_alumno = ? , email_alumno = ?, estatus_alumno = ? where carnet_alumno = "+ Carnet);
 
-            //pst.setString(2, txtcarnet.getText().trim());
+            pst.setString(1, txtcarnet.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
             pst.setString(3, txtdireccion.getText().trim());
             pst.setString(4, txttelefono.getText().trim());
