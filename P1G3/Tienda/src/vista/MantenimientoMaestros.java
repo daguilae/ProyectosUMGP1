@@ -201,49 +201,11 @@ public class MantenimientoMaestros extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Codigo para buscar en la base de datos
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from maestros where codigo_maestro = ?");
-            pst.setString(1, txtbuscar.getText().trim());
-            ResultSet rs = pst.executeQuery();
-
-            if(rs.next()){
-                txtcodigo.setText(rs.getString("codigo_maestro"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
-                txtnombre.setText(rs.getString("nombre_maestro"));
-                txtdireccion.setText(rs.getString("direccion_maestro"));
-                txttelefono.setText(rs.getString("telefono_maetro"));
-                txtemail.setText(rs.getString("email_maestro"));
-                txtestatus.setText(rs.getString("estatus_maestro"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Persona no registrada.");
-            }
-
-        }catch (Exception e){
-
-        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-        // TODO add your handling code here:
-        // Este codigo modifica los datos de la base de datos seleccionada:
-
-        try {
-            String Codigo = txtbuscar.getText().trim();
-
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update maestros set nombre_maestro= ?,direccion_maestro = ?,telefono_maestro = ? , email_maestro = ?, estatus_mestro = ? codigo_maestro = "+ Codigo);
-
-            pst.setString(1, txtcodigo.getText().trim());
-            pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtdireccion.getText().trim());
-            pst.setString(3, txttelefono.getText().trim());
-            pst.setString(4, txtemail.getText().trim());
-            pst.setString(5, txtestatus.getText().trim());
-            pst.executeUpdate();
-            Label1.setText("Modificación exitosa.");
-        }catch (Exception e) {
-        }
+       
     }//GEN-LAST:event_ModificarActionPerformed
 
     private void txtestatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtestatusActionPerformed
@@ -252,52 +214,11 @@ public class MantenimientoMaestros extends javax.swing.JInternalFrame {
 
     private void registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarActionPerformed
         // TODO add your handling code here:
-        // Codigo para registrar maestros en la base de datos
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into maestros values(?,?,?,?,?,?)");//Inserta los datos en la tabla alumnos
-            pst.setString(1, txtcodigo.getText().trim());
-            pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtdireccion.getText().trim());
-            pst.setString(4, txttelefono.getText().trim());
-            pst.setString(5, txtemail.getText().trim());
-            pst.setString(6, txtestatus.getText().trim());
-            pst.executeUpdate();
-
-            txtcodigo.setText("");//Se limpia el txt
-            txtnombre.setText("");//Se limpia el txt
-            txtdireccion.setText("");//Se limpia el txt
-            txttelefono.setText("");//Se limpia el txt
-            txtemail.setText("");//Se limpia el txt
-            txtestatus.setText("");//Se limpia el txt
-
-            Label1.setText("El Maestro se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
+  
     }//GEN-LAST:event_registrarActionPerformed
 
     private void eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarActionPerformed
-        // TODO add your handling code here:
-        try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete from maestros where codigo_maestro = ?");
-
-            pst.setString(1, txtbuscar.getText().trim());
-            pst.executeUpdate();
-
-            txtcodigo.setText("");
-            txtnombre.setText("");
-            txtdireccion.setText("");
-            txttelefono.setText("");
-            txtemail.setText("");
-            txtestatus.setText("");
-            Label1.setText("Registro eliminado.");
-
-        } catch (Exception e) {
-        }
+    
     }//GEN-LAST:event_eliminarActionPerformed
 
 

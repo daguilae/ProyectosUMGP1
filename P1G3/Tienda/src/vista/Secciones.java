@@ -142,65 +142,17 @@ public class Secciones extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into secciones values(?,?,?)");//Inserta los datos en la tabla
-
-            pst.setString(1, txtcodigo.getText().trim());//Codigo
-            pst.setString(2, txtnombre.getText().trim());//Nombre
-            pst.setString(3, txtestatus.getText().trim());//Estatus
-            pst.executeUpdate();
-
-            txtcodigo.setText("");//Se limpia el txt
-            txtnombre.setText("");//Se limpia el txt
-            txtestatus.setText("");//Se limpia el txt
-
-            label1.setText("La Aula se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete from secciones where codigo_seccion = ?");
-
-            pst.setString(1, Buscar.getText().trim());
-            pst.executeUpdate();
-
-            txtcodigo.setText("");
-            txtnombre.setText("");
-            txtestatus.setText("");
-            label1.setText("Registro eliminado.");
-
-        } catch (Exception e) {
-        }
+      
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from secciones where codigo_seccion = ?");
-            pst.setString(1, Buscar.getText().trim());
-            ResultSet rs = pst.executeQuery();
-
-            if(rs.next()){
-                txtcodigo.setText(rs.getString("codigo_seccion"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
-                txtnombre.setText(rs.getString("nombre_seccion"));
-                txtestatus.setText(rs.getString("estatus_seccion"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Seccion no registrada.");
-            }
-
-        }catch (Exception e){
-
-        }
+       
     }//GEN-LAST:event_jButton4ActionPerformed
 
 

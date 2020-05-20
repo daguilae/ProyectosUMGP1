@@ -148,85 +148,23 @@ public class Facultades extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into facultades values(?,?,?)");//Inserta los datos en la tabla
-           
-            pst.setString(1, txtcodigo.getText().trim());//Codigo
-            pst.setString(2, txtnombre.getText().trim());//Nombre
-            pst.setString(3, txtestatus.getText().trim());//Estatus
-            pst.executeUpdate();
-            
-            txtcodigo.setText("");//Se limpia el txt
-            txtnombre.setText("");//Se limpia el txt
-            txtestatus.setText("");//Se limpia el txt
-           
-            label1.setText("La facultad se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+      
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from facultades where codigo_facultad = ?");
-            pst.setString(1, Buscar.getText().trim());
-            ResultSet rs = pst.executeQuery();
+        
 
-            if(rs.next()){
-                txtcodigo.setText(rs.getString("codigo_facultad"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
-                txtnombre.setText(rs.getString("nombre_facultad"));
-                txtestatus.setText(rs.getString("estatus_facultad"));
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Facultad no registrada.");
-            }
-
-        }catch (Exception e){
-
-        }
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete from facultades where codigo_facultad = ?");
-
-            pst.setString(1, Buscar.getText().trim());
-            pst.executeUpdate();
-
-            txtcodigo.setText("");
-            txtnombre.setText("");
-            txtestatus.setText("");
-            txtestatus.setText("");
-            label1.setText("Registro eliminado.");
-
-        } catch (Exception e) {
-        }
+      
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         try {
-            String Codigo = Buscar.getText().trim();
-
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update facultades set codigo_facultad= ?,nombre_facultad = ?,estatus_facultad = ?, codigo_facultad = "+ Codigo);
-
-            pst.setString(1, txtcodigo.getText().trim());
-            pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtestatus.getText().trim());
-           
-            pst.executeUpdate();
-           
-           
-        }catch (Exception e) {
-            
-        }
+         
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
