@@ -6,16 +6,21 @@
 package Mantenimiento;
 import java.sql.*;
 import javax.swing.JOptionPane;
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 /**
  *
  * @author Jacky
  */
 public class Carreras extends javax.swing.JInternalFrame {
-
+FondoPanel fondo = new FondoPanel();
     /**
      * Creates new form Carreras
      */
     public Carreras() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -263,4 +268,16 @@ public class Carreras extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtestatus;
     private javax.swing.JTextField txtfacultad;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/CONTENEDORMDI/fondonaranja.jpg")).getImage();
+        g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
+        
+    }
+}
 }
