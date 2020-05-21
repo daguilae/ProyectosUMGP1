@@ -168,7 +168,7 @@ public class Aulas extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // Funcion donde se elimanar cualquier registro
+        // Funcion donde se elimanar cualquier registro del contenedor
 
         try {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
