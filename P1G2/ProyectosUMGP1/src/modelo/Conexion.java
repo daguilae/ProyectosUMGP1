@@ -1,7 +1,5 @@
 
-
-
-package login;
+package modelo;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
@@ -11,18 +9,18 @@ import java.util.logging.Logger;
 
 public class Conexion {
     
-    private final String base = "tienda1";
-    private final String user = "root";
-    private final String password = "kingcobra123DA";
-    private final String url = "jdbc:mysql://localhost/" + base;
-    private Connection conn = null;
+    private final String base = "tienda";
+    private final String user = "admin";
+    private final String password = "Dba052K20";
+    private final String url = "jdbc:mysql://localhost:3306/" + base;
+    private Connection con = null;
     
     public Connection getConexion()
     {
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conn = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
+            con = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
             
         } catch(SQLException e)
         {
@@ -30,7 +28,7 @@ public class Conexion {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-      return conn;  
+      return con;  
     }
 
 }
