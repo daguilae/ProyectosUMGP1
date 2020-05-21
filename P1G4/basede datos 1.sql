@@ -44,12 +44,12 @@ Estatus_Carreras varchar (1),
 foreign key (codigo_Carreras) references alumnos (carnet_Alumno)
 
 )Engine = InnoDB ;
-CREATE TABLE secciones 
+CREATE TABLE Secciones 
 (
-codigo_secciones varchar(5) PRIMARY KEY,
-nombre_secciones Varchar (45) ,
-Estatus_secciones varchar (1),
-foreign key (codigo_secciones) references alumnos (carnet_Alumno)
+codigo_Secciones varchar(5) PRIMARY KEY,
+nombre_Secciones Varchar (45) ,
+Estatus_Secciones varchar (1),
+foreign key (codigo_Secciones) references alumnos (carnet_Alumno)
 
 )Engine = InnoDB ;
 
