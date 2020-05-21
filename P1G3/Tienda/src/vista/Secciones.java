@@ -87,6 +87,11 @@ public class Secciones extends javax.swing.JInternalFrame {
         });
 
         btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
 
@@ -193,6 +198,32 @@ public class Secciones extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+
+        try {
+            String ID = txtbuscar.getText().trim();
+
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update secciones set codigo_seccion = ?, nombre_seccion = ?, estatus_seccion= ? where codigo_seccion=?");
+
+            pst.setString(1, txtcodigo.getText().trim());
+            pst.setString(2, txtnombre.getText().trim());
+            pst.setString(6, txtestatus.getText().trim());
+            pst.setString(7, cod.trim());
+
+            pst.executeUpdate();
+
+            txtcodigo.setText("");
+            txtnombre.setText("");
+            txtestatus.setText("");
+            Label1.setText("Registro Modificado.");
+
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_btnModificarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
