@@ -96,6 +96,11 @@ public class Secciones extends javax.swing.JInternalFrame {
         btnEliminar.setText("Eliminar");
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,6 +229,31 @@ public class Secciones extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from secciones where codigo_seccion = ?");
+            pst.setString(1, txtbuscar.getText().trim());
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                txtcodigo.setText(rs.getString("codigo_seccion"));
+                txtnombre.setText(rs.getString("nombre_seccion"));
+                txtestatus.setText(rs.getString("estatus_seccion"));
+                cod = txtbuscar.getText();
+            } else {
+                JOptionPane.showMessageDialog(null, "Sección no registrada.");
+                txtbuscar.setText("");
+            }
+
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
