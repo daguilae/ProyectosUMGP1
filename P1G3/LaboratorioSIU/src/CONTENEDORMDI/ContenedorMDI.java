@@ -8,6 +8,7 @@ package CONTENEDORMDI;
 import Mantenimiento.Facultades;
 import Mantenimiento.Cursos;
 import Mantenimiento.Carreras;
+import Mantenimiento.MantenimientoAlumnos;
 import P.TRANSACCIONALES.AsignacionEstudiantes;
 
 
@@ -38,9 +39,11 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         Carreras = new javax.swing.JMenuItem();
         Cursos = new javax.swing.JMenuItem();
@@ -52,6 +55,8 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
 
         jLabel1.setText("jLabel1");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +74,15 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 204));
 
         jMenu1.setText("Abrir");
+
+        jMenuItem2.setText("Mantenimiento Alumnos");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Catalogos");
@@ -168,6 +182,13 @@ public class ContenedorMDI extends javax.swing.JFrame {
         c.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        MantenimientoAlumnos cs = new MantenimientoAlumnos();
+        jDesktopPane1.add(cs);
+        cs.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,6 +238,8 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 
  
