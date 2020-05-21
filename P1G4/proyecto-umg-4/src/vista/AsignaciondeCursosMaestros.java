@@ -1,7 +1,9 @@
 package vista;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+/* Herbert Leonel Dominguez Chavez*/
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -46,6 +48,10 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 204, 153));
+        setVisible(true);
+
+        jButton2.setBackground(new java.awt.Color(153, 153, 255));
         jButton2.setText("REGISTRAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +132,7 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,7 +142,7 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
          try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/umg4", "root", "");
-            PreparedStatement pst = cn.prepareStatement("insert into asignacionmaestros values(?,?,?,?,?,?)");
+            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosmaestros values(?,?,?,?,?,?,?)");
             
             pst.setString(1, jTextField1.getText().trim());
             pst.setString(2, jTextField2.getText().trim());
@@ -144,6 +150,7 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
              pst.setString(4, jTextField4.getText().trim());
             pst.setString(5, jTextField5.getText().trim());
             pst.setString(6, jTextField6.getText().trim());
+            pst.setString(7, jTextField7.getText().trim());
             pst.executeUpdate();
             
             jTextField1.setText("");
@@ -152,6 +159,7 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
             jTextField4.setText("");
             jTextField5.setText("");
             jTextField6.setText("");
+            jTextField7.setText("");
         }catch (Exception e){
             System.out.print(e.getMessage());
             jTextField1.setText("");
@@ -160,6 +168,7 @@ public class AsignaciondeCursosMaestros extends javax.swing.JInternalFrame {
             jTextField4.setText("");
             jTextField5.setText("");
             jTextField6.setText("");
+            jTextField7.setText("");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
