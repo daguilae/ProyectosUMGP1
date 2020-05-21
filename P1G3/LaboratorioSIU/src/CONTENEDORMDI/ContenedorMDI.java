@@ -5,6 +5,10 @@
  */
 package CONTENEDORMDI;
 
+import Mantenimiento.Facultades;
+import Mantenimiento.Cursos;
+import Mantenimiento.Carreras;
+
 /**
  *
  * @author Jacky
@@ -31,6 +35,9 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
+        Carreras = new javax.swing.JMenuItem();
+        Cursos = new javax.swing.JMenuItem();
+        Facultades = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -42,17 +49,42 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 639, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 429, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Abrir");
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Catalogos");
+
+        Carreras.setText("Mantenimiento Carrera");
+        Carreras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CarrerasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Carreras);
+
+        Cursos.setText("Mantenimiento Cursos");
+        Cursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CursosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Cursos);
+
+        Facultades.setText("Mantenimiento Facultades");
+        Facultades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FacultadesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Facultades);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Procesos");
@@ -73,15 +105,40 @@ public class ContenedorMDI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CursosActionPerformed
+        // TODO add your handling code here:
+        Cursos cu = new Cursos();
+        jDesktopPane1.add(cu);
+        cu.setVisible(true);
+    }//GEN-LAST:event_CursosActionPerformed
+
+    private void CarrerasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarrerasActionPerformed
+        // TODO add your handling code here:
+        Carreras cr = new Carreras();
+        jDesktopPane1.add(cr);
+        cr.setVisible(true);
+    }//GEN-LAST:event_CarrerasActionPerformed
+
+    private void FacultadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FacultadesActionPerformed
+        // TODO add your handling code here:
+        Facultades fr = new Facultades();
+        jDesktopPane1.add(fr);
+        fr.setVisible(true);
+    }//GEN-LAST:event_FacultadesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,6 +176,9 @@ public class ContenedorMDI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Carreras;
+    private javax.swing.JMenuItem Cursos;
+    private javax.swing.JMenuItem Facultades;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
