@@ -94,6 +94,11 @@ public class Secciones extends javax.swing.JInternalFrame {
         });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +259,25 @@ public class Secciones extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("delete from secciones where codigo_seccion = ?");
+
+            pst.setString(1, txtbuscar.getText().trim());
+            pst.executeUpdate();
+
+            txtcodigo.setText("");
+            txtnombre.setText("");
+            txtestatus.setText("");
+            Label1.setText("Registro eliminado.");
+
+        } catch (Exception e) {
+        }
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
