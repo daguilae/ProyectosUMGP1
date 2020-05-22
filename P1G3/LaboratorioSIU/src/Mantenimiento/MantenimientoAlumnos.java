@@ -1,18 +1,22 @@
 
 package Mantenimiento;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 /**
  *
  * @author Jeff
  */
 public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
-
+FondoPanel fondo = new FondoPanel();
     private static Connection con;
     private static final String driver = "Proyecto";
     private static final String user = "root";
@@ -38,7 +42,9 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
     }
     
     public MantenimientoAlumnos() {
+        this.setContentPane(fondo);
         initComponents();
+        ;
     }
 
     /**
@@ -69,6 +75,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         ESTADO = new javax.swing.JLabel();
         Label1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -121,6 +128,9 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jLabel5.setText("Registro de Alumnos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,11 +140,6 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtcarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +162,14 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtnombre)
-                                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtcarnet, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -182,7 +194,9 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(txtcarnet, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -219,7 +233,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
                 .addComponent(ESTADO)
                 .addGap(18, 18, 18)
                 .addComponent(Label1)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
@@ -283,7 +297,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
             txttelefono.setText("");
             txtemail.setText("");
             txtestatus.setText("");
-            Label1.setText("Registro eliminado.");
+            Label1.setText("Registro Modificado.");
 
         } catch (Exception e) {
             System.out.print(e.getMessage());
@@ -353,6 +367,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtbuscar;
@@ -363,4 +378,16 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/CONTENEDORMDI/fondonaranja.jpg")).getImage();
+        g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
+        
+    }
+}
 }

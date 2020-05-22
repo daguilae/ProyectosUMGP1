@@ -62,7 +62,6 @@ FondoPanel fondo = new FondoPanel();
         jLabel3.setText("Estatus Curso");
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Modificar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +70,6 @@ FondoPanel fondo = new FondoPanel();
         });
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +78,6 @@ FondoPanel fondo = new FondoPanel();
         });
 
         jButton4.setBackground(new java.awt.Color(255, 204, 204));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
         jButton4.setText("Buscar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +86,6 @@ FondoPanel fondo = new FondoPanel();
         });
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,9 +101,6 @@ FondoPanel fondo = new FondoPanel();
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
@@ -119,29 +112,32 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtestatus, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3)))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(206, 206, 206)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4)
+                            .addComponent(jButton3)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -164,7 +160,7 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(jButton4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -173,7 +169,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto1", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from cursos where codigo_curso = ?");
 
             pst.setString(1, Buscar.getText().trim());
@@ -191,7 +187,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from cursos where codigo_curso = ?");
             pst.setString(1, Buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -213,7 +209,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");//conecta a MYSQL
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into cursos values(?,?,?)");//Inserta los datos en la tabla
 
             pst.setString(1, txtcodigo.getText().trim());//Codigo
@@ -237,7 +233,7 @@ FondoPanel fondo = new FondoPanel();
         try {
             String Codigo = Buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("update cursos set codigo_curso= ?,nombre_curso = ?,estatus_curso = ?, codigo_curso = "+ Codigo);
 
             pst.setString(1, txtcodigo.getText().trim());

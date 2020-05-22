@@ -66,6 +66,7 @@ FondoPanel fondo = new FondoPanel();
         jLabel11 = new javax.swing.JLabel();
         Label1 = new javax.swing.JLabel();
         ESTADO = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -100,11 +101,31 @@ FondoPanel fondo = new FondoPanel();
         });
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel4.setText("Aulas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(ESTADO)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(Label1)
+                .addGap(130, 130, 130))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -129,25 +150,18 @@ FondoPanel fondo = new FondoPanel();
                         .addGap(102, 102, 102)
                         .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar)))
+                        .addComponent(btnBuscar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jLabel4)))
                 .addContainerGap(54, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(ESTADO)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(Label1)
-                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -188,13 +202,13 @@ FondoPanel fondo = new FondoPanel();
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
-            txtbuscar.setText("");
+            txtestatus.setText("");
 
             Label1.setText("Aula Registrada");
 
@@ -212,14 +226,14 @@ try {
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
             pst.setString(4, cod.trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
-            txtbuscar.setText("");
+            txtestatus.setText("");
             Label1.setText("Aula Modificada.");
 
         } catch (Exception e) {
@@ -245,6 +259,28 @@ try {
                // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from aulas where codigo_aula = ?");
+            pst.setString(1, txtbuscar.getText().trim());
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                txtcodigo.setText(rs.getString("codigo_aula"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
+                txtnombre.setText(rs.getString("nombre_aula"));
+                txtestatus.setText(rs.getString("estatus_aula"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Aula no registrada.");
+            }
+
+        }catch (Exception e){
+
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ESTADO;
@@ -257,6 +293,7 @@ try {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtestatus;

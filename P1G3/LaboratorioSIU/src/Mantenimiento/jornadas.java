@@ -67,6 +67,11 @@ private static Connection con;
         btnBuscar = new javax.swing.JButton();
         ESTADO = new javax.swing.JLabel();
         Label1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jLabel1.setText("Codigo jornadas");
 
@@ -96,6 +101,14 @@ private static Connection con;
         });
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel4.setText("Mantenimiento Jornadas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,13 +147,20 @@ private static Connection con;
                 .addContainerGap(61, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Label1)
-                .addGap(122, 122, 122))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Label1)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(80, 80, 80))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,13 +198,13 @@ try {
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
-            txtbuscar.setText("");
+            txtestatus.setText("");
 
             Label1.setText("Jornada Registrada");
 
@@ -202,14 +222,14 @@ try {
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
             pst.setString(4, cod.trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
-            txtbuscar.setText("");
+            txtestatus.setText("");
             Label1.setText("Jornada Modificada.");
 
         } catch (Exception e) {
@@ -234,6 +254,28 @@ try {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from jornada where codigo_jornada = ?");
+            pst.setString(1, txtbuscar.getText().trim());
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                txtcodigo.setText(rs.getString("codigo_jornada"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
+                txtnombre.setText(rs.getString("nombre_jornada"));
+                txtestatus.setText(rs.getString("estatus_jornada"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "jornada no registrada.");
+            }
+
+        }catch (Exception e){
+
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ESTADO;
@@ -245,6 +287,7 @@ try {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtestatus;

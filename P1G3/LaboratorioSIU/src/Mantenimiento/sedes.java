@@ -67,6 +67,11 @@ private static Connection con;
         btnBuscar = new javax.swing.JButton();
         ESTADO = new javax.swing.JLabel();
         Label1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         jLabel1.setText("Codigo Sede");
 
@@ -96,11 +101,23 @@ private static Connection con;
         });
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel4.setText("Mantenimiento sede");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Label1)
+                .addGap(122, 122, 122))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -130,17 +147,17 @@ private static Connection con;
                         .addComponent(btnBuscar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(56, 56, 56)
-                        .addComponent(ESTADO)))
+                        .addComponent(ESTADO))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel4)))
                 .addContainerGap(61, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Label1)
-                .addGap(122, 122, 122))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addComponent(jLabel4)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -161,7 +178,7 @@ private static Connection con;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(ESTADO)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Label1)
@@ -178,12 +195,13 @@ try {
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
+            txtestatus.setText("");
             txtbuscar.setText("");
 
             Label1.setText("Sede Registrada");
@@ -202,14 +220,15 @@ try {
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
-            pst.setString(3, txtbuscar.getText().trim());
+            pst.setString(3, txtestatus.getText().trim());
             pst.setString(4, cod.trim());
 
             pst.executeUpdate();
 
             txtcodigo.setText("");
             txtnombre.setText("");
-            txtbuscar.setText("");
+            txtestatus.setText("");
+           
             Label1.setText("Sede Modificada.");
 
         } catch (Exception e) {
@@ -234,6 +253,28 @@ try {
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+      try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from sedes where codigo_sede = ?");
+            pst.setString(1, txtbuscar.getText().trim());
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                txtcodigo.setText(rs.getString("codigo_sede"));//Se unen los campos de la tabla(MYSQL) a los de JAVA
+                txtnombre.setText(rs.getString("nombre_sede"));
+                txtestatus.setText(rs.getString("estatus_sede"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Sede no registrada.");
+            }
+
+        }catch (Exception e){
+
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ESTADO;
@@ -245,6 +286,7 @@ try {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtbuscar;
     private javax.swing.JTextField txtcodigo;
     private javax.swing.JTextField txtestatus;

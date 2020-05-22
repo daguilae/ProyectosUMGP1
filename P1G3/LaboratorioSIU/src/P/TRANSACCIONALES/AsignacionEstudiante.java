@@ -324,7 +324,7 @@ FondoPanel fondo = new FondoPanel();
         // TODO add your handling code here:
          try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
+            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
            
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtsede.getText().trim());

@@ -46,7 +46,7 @@ FondoPanel fondo = new FondoPanel();
         label1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         Buscar = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        bus = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -67,7 +67,6 @@ FondoPanel fondo = new FondoPanel();
         jLabel4.setText("Estatus Carrera");
 
         jButton1.setBackground(new java.awt.Color(255, 204, 204));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +75,6 @@ FondoPanel fondo = new FondoPanel();
         });
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Modificar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +83,6 @@ FondoPanel fondo = new FondoPanel();
         });
 
         jButton3.setBackground(new java.awt.Color(255, 204, 204));
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setText("Eliminar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,12 +90,11 @@ FondoPanel fondo = new FondoPanel();
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 204, 204));
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("Buscar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        bus.setBackground(new java.awt.Color(255, 204, 204));
+        bus.setText("Buscar");
+        bus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                busActionPerformed(evt);
             }
         });
 
@@ -141,7 +137,7 @@ FondoPanel fondo = new FondoPanel();
                                 .addComponent(jButton3))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
-                                .addComponent(jButton4))))))
+                                .addComponent(bus))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addComponent(jLabel5))
@@ -174,7 +170,7 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
+                    .addComponent(bus)
                     .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -229,7 +225,7 @@ FondoPanel fondo = new FondoPanel();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void busActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_busActionPerformed
         // TODO add your handling code here:
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
@@ -250,7 +246,7 @@ FondoPanel fondo = new FondoPanel();
         }catch (Exception e){
 
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_busActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -264,22 +260,23 @@ FondoPanel fondo = new FondoPanel();
             pst.setString(2, txtcarrera.getText().trim());//Nombre
             pst.setString(3, txtfacultad.getText().trim());//Facultad
             pst.setString(4, txtestatus.getText().trim());//Estatus
-           
+           label1.setText("La carrera se modifico");
             pst.executeUpdate();
            
            
         }catch (Exception e) {
             
         }
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Buscar;
+    private javax.swing.JButton bus;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

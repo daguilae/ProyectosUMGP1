@@ -162,10 +162,6 @@ FondoPanel fondo = new FondoPanel();
                                         .addComponent(jLabel2)
                                         .addComponent(jLabel3))))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnBuscar))
                                 .addComponent(txtcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,19 +169,25 @@ FondoPanel fondo = new FondoPanel();
                                 .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtestatus, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(50, 50, 50)
-                            .addComponent(btnRegistrar)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnModificar)
-                            .addGap(18, 18, 18)
-                            .addComponent(btnEliminar))))
-                .addContainerGap(87, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Label1)
-                    .addComponent(ESTADO))
-                .addGap(176, 176, 176))
+                            .addGap(0, 34, Short.MAX_VALUE)
+                            .addComponent(ESTADO)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(btnRegistrar)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnModificar)))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnEliminar)
+                                        .addComponent(btnBuscar)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(46, 46, 46)
+                                    .addComponent(Label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,15 +223,15 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(btnRegistrar)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar))
-                .addGap(18, 25, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Label1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(ESTADO)
-                .addGap(18, 18, 18)
-                .addComponent(Label1)
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -275,7 +277,7 @@ FondoPanel fondo = new FondoPanel();
             String ID = txtbuscar.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update maestros set codigo_maestro = ?, nombre_maestro = ?, direccion_maestro = ?, telefono_maestro= ?, email_maestro= ?, estatus_maestro= ? where codigo_maestro=?");
+            PreparedStatement pst = cn.prepareStatement("update maestros set codigo_maestro = ?, nombre_maestro = ?, direccion_maestro = ?, telefono_maetro= ?, email_maestro= ?, estatus_maestro= ? where codigo_maestro=?");
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
@@ -333,12 +335,12 @@ FondoPanel fondo = new FondoPanel();
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
-                txtcodigo.setText(rs.getString("carnet_alumno"));
-                txtnombre.setText(rs.getString("nombre_alumno"));
-                txtdireccion.setText(rs.getString("direccion_alumno"));
-                txttelefono.setText(rs.getString("telefono_alumno"));
-                txtemail.setText(rs.getString("email_alumno"));
-                txtestatus.setText(rs.getString("estatus_alumno"));
+                txtcodigo.setText(rs.getString("codigo_maestro"));
+                txtnombre.setText(rs.getString("nombre_maestro"));
+                txtdireccion.setText(rs.getString("direccion_maestro"));
+                txttelefono.setText(rs.getString("telefono_maetro"));
+                txtemail.setText(rs.getString("email_maestro"));
+                txtestatus.setText(rs.getString("estatus_maestro"));
                 cod = txtbuscar.getText();
             } else {
                 JOptionPane.showMessageDialog(null, "Maestro no registrado.");
