@@ -63,11 +63,11 @@ public class Aulas extends javax.swing.JInternalFrame {
         Label1 = new javax.swing.JLabel();
         ESTADO = new javax.swing.JLabel();
 
-        jLabel1.setText("Codigo Sede");
+        jLabel1.setText("Codigo aula:");
 
-        jLabel2.setText("Nombre Sede");
+        jLabel2.setText("Nombre aula:");
 
-        jLabel3.setText("Estatus Sede");
+        jLabel3.setText("Estatus aula:");
 
         btnRegistro.setText("Registro");
         btnRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +211,7 @@ try {
             txtcodigo.setText("");
             txtnombre.setText("");
             txtbuscar.setText("");
-            Label1.setText("Aula Modificado.");
+            Label1.setText("Aula Modificada.");
 
         } catch (Exception e) {
             System.out.print(e.getMessage());
