@@ -5,11 +5,12 @@
  */
 package CONTENEDORMDI;
 
+import P.TRANSACCIONALES.AsignacionEstudiantes;
 import Mantenimiento.Facultades;
 import Mantenimiento.Cursos;
 import Mantenimiento.Carreras;
 import Mantenimiento.MantenimientoAlumnos;
-import P.TRANSACCIONALES.AsignacionEstudian;
+
 
 
 
@@ -19,7 +20,7 @@ import P.TRANSACCIONALES.AsignacionEstudian;
  * @author Jacky
  */
 public class ContenedorMDI extends javax.swing.JFrame {
-
+private AsignacionEstudiantes ventana3;
     /**
      * Creates new form ContenedorMDI
      */
@@ -50,7 +51,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         Cursos = new javax.swing.JMenuItem();
         Facultades = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -120,13 +121,13 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenu3.setBackground(new java.awt.Color(255, 255, 153));
         jMenu3.setText("Procesos");
 
-        jMenuItem1.setText("Asignacion Estudiantes");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem4.setText("Asignacion Estudiantes");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItem4ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem1);
+        jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
 
@@ -176,19 +177,18 @@ public class ContenedorMDI extends javax.swing.JFrame {
         fr.setVisible(true);
     }//GEN-LAST:event_FacultadesActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        AsignacionEstudian c = new AsignacionEstudian();
-        jDesktopPane1.add(c);
-        c.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         MantenimientoAlumnos cs = new MantenimientoAlumnos();
         jDesktopPane1.add(cs);
         cs.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        ventana3 = new AsignacionEstudiantes();
+        jDesktopPane1.add(ventana3);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,9 +238,9 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 
  
