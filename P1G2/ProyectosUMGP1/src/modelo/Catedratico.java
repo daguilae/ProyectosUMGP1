@@ -6,9 +6,10 @@ package modelo;
 public class Catedratico {
     
     private int id;
+    private int codigo;
     private String nombre;
     private String apellido;
-    private String correo;
+    private String email;
     private String curso;
 
     public int getId() {
@@ -35,12 +36,12 @@ public class Catedratico {
         this.apellido = apellido;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCurso() {
@@ -49,6 +50,14 @@ public class Catedratico {
 
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
     
     
