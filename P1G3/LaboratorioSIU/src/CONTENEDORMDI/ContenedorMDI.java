@@ -10,8 +10,8 @@ import Mantenimiento.Facultades;
 import Mantenimiento.Cursos;
 import Mantenimiento.Carreras;
 import Mantenimiento.MantenimientoAlumnos;
-
-
+import Mantenimiento.MantenimientoMaestros;
+import Mantenimiento.Secciones;
 
 
 
@@ -46,10 +46,12 @@ private AsignacionEstudiantes ventana3;
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jmenuMaestros = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         Carreras = new javax.swing.JMenuItem();
         Cursos = new javax.swing.JMenuItem();
         Facultades = new javax.swing.JMenuItem();
+        jmenuSecciones = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -85,6 +87,14 @@ private AsignacionEstudiantes ventana3;
         });
         jMenu1.add(jMenuItem2);
 
+        jmenuMaestros.setText("Mantenimiento Maestros");
+        jmenuMaestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuMaestrosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmenuMaestros);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Catalogos");
@@ -115,6 +125,14 @@ private AsignacionEstudiantes ventana3;
             }
         });
         jMenu2.add(Facultades);
+
+        jmenuSecciones.setText("Mantenimiento Secciones");
+        jmenuSecciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuSeccionesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmenuSecciones);
 
         jMenuBar1.add(jMenu2);
 
@@ -190,6 +208,18 @@ private AsignacionEstudiantes ventana3;
         jDesktopPane1.add(ventana3);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+    private void jmenuSeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuSeccionesActionPerformed
+        Secciones secciones = new Secciones();
+        jDesktopPane1.add(secciones);
+        secciones.setVisible(true);
+    }//GEN-LAST:event_jmenuSeccionesActionPerformed
+
+    private void jmenuMaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuMaestrosActionPerformed
+        MantenimientoMaestros maestros = new MantenimientoMaestros();
+        jDesktopPane1.add(maestros);
+        maestros.setVisible(true);
+    }//GEN-LAST:event_jmenuMaestrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,6 +271,8 @@ private AsignacionEstudiantes ventana3;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jmenuMaestros;
+    private javax.swing.JMenuItem jmenuSecciones;
     // End of variables declaration//GEN-END:variables
 
  
