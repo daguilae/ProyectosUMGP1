@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  * @author snake
  */
 public class SqlUsuariosU extends Conexion {
+    
  public boolean registrar(UsuariosU usr) {
      
   PreparedStatement ps = null;
@@ -121,4 +122,5 @@ public class SqlUsuariosU extends Conexion {
 
     
     }
+
 }

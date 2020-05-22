@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,14 +12,9 @@ package Modelo;
  */
 public class Hash {
     /* Retorna un hash a partir de un tipo y un texto */
-=======
-
-package Modelo;
-
-public class Hash {
     
     // Retorna un hash a partir de un tipo y un texto
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810
+
     public static String getHash(String txt, String hashType) {
         try {
             java.security.MessageDigest md = java.security.MessageDigest.getInstance(hashType);
@@ -34,26 +29,24 @@ public class Hash {
         }
         return null;
     }
+    
  
-<<<<<<< HEAD
+
     /* Retorna un hash MD5 a partir de un texto */
-=======
+
     // Retorna un hash MD5 a partir de un texto 
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810
+
     public static String md5(String txt) {
         return Hash.getHash(txt, "MD5");
     }
  
-<<<<<<< HEAD
+//<<<<<<< HEAD
     /* Retorna un hash SHA1 a partir de un texto */
     public static String sha1(String txt) {
         return Hash.getHash(txt, "SHA1");
     }   
-=======
-    // Retorna un hash SHA1 a partir de un texto
-    public static String sha1(String txt) {
-        return Hash.getHash(txt, "SHA1");
-    }
 
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810
 }
+
+//>>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810
+

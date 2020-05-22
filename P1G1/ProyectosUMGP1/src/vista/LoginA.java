@@ -130,8 +130,8 @@ public class LoginA extends javax.swing.JFrame {
                 Inicio.frmLog = null;
                 this.dispose();
 
-              Mantenimiento frmMenu = new Mantenimiento (mod);
-                frmMenu.setVisible(true);
+             // Mantenimiento frmMenu = new Mantenimiento (mod);
+               // frmMenu.setVisible(true);
 
             } else {
                 JOptionPane.showMessageDialog(null, " Datos incorrectos al Ingresar ");
