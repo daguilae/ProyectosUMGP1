@@ -1,33 +1,26 @@
-<<<<<<< HEAD:P1G1/ProyectosUMGP1/src/Mantenimientos.java
-=======
+
 /**
  *
  * @author Tobar Arèvalo
  */
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810:P1G1/ProyectosUMGP1/src/modificaciones/Mantenimientos.java
+
+
 
 import Modelo.UsuariosU;
 
-<<<<<<< HEAD:P1G1/ProyectosUMGP1/src/Mantenimientos.java
-public class Mantenimientos extends javax.swing.JFrame {
-    
-    private Registro NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
-=======
-import Modelo.Usuarios;
+
 
 public class Mantenimientos extends javax.swing.JFrame {
-Usuarios mod;
+UsuariosU mod;
+
 
     //JinternalFran para registros
     private RegistroA NuevaVentana;//se declaran variables para la visibilidad de los JinternalFran
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810:P1G1/ProyectosUMGP1/src/modificaciones/Mantenimientos.java
     private RegistroMaestro ventana;
     private RegistroFacultades ventanafac;
     private RegistroCarreras ventanacarr;
     private RegistroCursos ventanacur;
-<<<<<<< HEAD:P1G1/ProyectosUMGP1/src/Mantenimientos.java
-    
-=======
+    ////////////////////////////////////////
     private RegistroSedes ventanasede;
     private RegistroAula ventanaaula;
     private RegistroJornadas ventanajor;
@@ -42,15 +35,13 @@ Usuarios mod;
     private ModificacionAulas ventanaModAula;
     private ModificacionJornadas ventanaModJornada;
     private ModificacionSecciones ventanaModSec;
-   
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810:P1G1/ProyectosUMGP1/src/modificaciones/Mantenimientos.java
 
-    UsuariosU mod;
+
+   
   public Mantenimientos() {
   initComponents();
   
-  // jDesktopPane1.setBorder(niosew imagenfondo());
-        this.setExtendedState(Mantenimientos.MAXIMIZED_BOTH);//Se puso una imagen de Fondo en el JDesktopPane
+   
     }
     Mantenimientos(UsuariosU mod) {
     initComponents();
@@ -66,47 +57,85 @@ Usuarios mod;
     ventanafac.setVisible(true);
     ventanacarr.setVisible(true);
     ventanacur.setVisible(true);  ///* Creado por Nayre
+    ventanasede.setVisible(true);
+     
+            ventanaaula.setVisible(true);
+            ventanajor.setVisible(true);
+            ventanasec.setVisible(true); 
+            
+            ventanaModAlum.setVisible(true);
+            ventanaModMaes.setVisible(true);
+            ventanaModFacul.setVisible(true);
+            ventanaModCarr.setVisible(true);
+            ventanaModcur.setVisible(true);
+            ventanaModSede.setVisible(true);
+            ventanaModAula.setVisible(true);
+            ventanaModJornada.setVisible(true);
+            ventanaModSec.setVisible(true);
+            
+           
+            
         } else {
             NuevaVentana.setVisible(false);
            ventana.setVisible(false);
            ventanafac.setVisible(false);
            ventanacarr.setVisible(false);
            ventanacur.setVisible(false);
+           
+         ventanasede.setVisible(false);
+           ventanaaula.setVisible(false);
+           ventanajor.setVisible(false);
+           ventanasec.setVisible(false);   
+           
+           ventanaModAlum.setVisible(false);
+            ventanaModMaes.setVisible(false);
+            ventanaModFacul.setVisible(false);
+            ventanaModCarr.setVisible(false);
+            ventanaModcur.setVisible(false);
+            ventanaModSede.setVisible(false);
+            ventanaModAula.setVisible(false);
+            ventanaModJornada.setVisible(false);
+            ventanaModSec.setVisible(false);
         }  
+       if (mod.getIdTipo() == 2) {
+            ventanasede.setVisible(true);
+            ventanaaula.setVisible(true);
+            ventanajor.setVisible(true);
+            ventanasec.setVisible(true);  
+            
+              } else {
+            ventanasede.setVisible(false);
+           ventanaaula.setVisible(false);
+           ventanajor.setVisible(false);
+           ventanasec.setVisible(false);
+           
+        }  
+              
+        
+        if (mod.getIdTipo() == 3) {
+            ventanaModAlum.setVisible(true);
+            ventanaModMaes.setVisible(true);
+            ventanaModFacul.setVisible(true);
+            ventanaModCarr.setVisible(true);
+            ventanaModcur.setVisible(true);
+            ventanaModSede.setVisible(true);
+            ventanaModAula.setVisible(true);
+            ventanaModJornada.setVisible(true);
+            ventanaModSec.setVisible(true);
+            } else {
+           ventanaModAlum.setVisible(false);
+            ventanaModMaes.setVisible(false);
+            ventanaModFacul.setVisible(false);
+            ventanaModCarr.setVisible(false);
+            ventanaModcur.setVisible(false);
+            ventanaModSede.setVisible(false);
+            ventanaModAula.setVisible(false);
+            ventanaModJornada.setVisible(false);
+            ventanaModSec.setVisible(false);
+        }  
+        
+    
     }
-Mantenimientos(Usuarios mod) {
-        initComponents();
-        setLocationRelativeTo(null);
-        this.mod = mod;
-
-        if (mod.getId_Tipo() == 1) {
-            jMenu1.setVisible(true);
-            jMenu3.setVisible(true);
-            jMenu5.setVisible(true);
-            ModificarAlumno.setVisible(true);
-        } else if (mod.getId_Tipo() == 2) {
-            jMenu1.setVisible(true);
-            jMenu3.setVisible(true);
-            jMenu5.setVisible(true);
-            ModificarAlumno.setVisible(true);
-        }
-        else if (mod.getId_Tipo() == 3) {
-            jMenu1.setVisible(true);
-            jMenu3.setVisible(true);
-            jMenu5.setVisible(true);
-            ModificarAlumno.setVisible(true);
-        }
-
-<<<<<<< HEAD:P1G1/ProyectosUMGP1/src/Mantenimientos.java
-   
-=======
-    }
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
->>>>>>> 867b6d161acecc7281f47ebb7d43788fe1bf0810:P1G1/ProyectosUMGP1/src/modificaciones/Mantenimientos.java
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
