@@ -20,7 +20,7 @@ import Mantenimiento.MantenimientoAlumnos;
  * @author Jacky
  */
 public class ContenedorMDI extends javax.swing.JFrame {
-private AsignacionEstudiantes ventana3;
+
     /**
      * Creates new form ContenedorMDI
      */
@@ -186,8 +186,9 @@ private AsignacionEstudiantes ventana3;
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
-        ventana3 = new AsignacionEstudiantes();
-        jDesktopPane1.add(ventana3);
+        AsignacionEstudiantes p = new AsignacionEstudiante();
+        jDesktopPane1.add(p);
+        p.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

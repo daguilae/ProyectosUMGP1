@@ -18,15 +18,31 @@ import java.sql.*;
  */
 public class AsignacionEstudiantes extends javax.swing.JInternalFrame {
 FondoPanel fondo = new FondoPanel();
-private Conexion Con = new Conexion();
+//private Conexion Con = new Conexion();
  /**
      * Creates new form AsignacionEstudiantes
      */
-    public AsignacionEstudiantes() {
+    public AsignacionEstudiantes() throws SQLException {
        this.setContentPane(fondo);
         initComponents();
-       this.ComboNombre.setModel(Con.Obt_nombre());
+       PreparedStatement ps = null;
+       ResultSet rs= null;
+       Conexion conn = new Conexion();
+       Connection  con = conn.getConexion();
+       
+       try{
+           String sql = "SELECT * FROM facultades";
+           ps= con.prepareStatement(sql);
+           rs = ps.executeQuery();
+           while(rs.next()){
+               ComboNombre.addItem(rs.getString("facultades"));
+           }
+           rs.close();
+       }catch(SQLException ex){
+           System.err.println(ex.toString());
+       }
     }
+       
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +63,6 @@ private Conexion Con = new Conexion();
         setMaximizable(true);
         setVisible(true);
 
-        ComboNombre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         ComboNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboNombreActionPerformed(evt);
