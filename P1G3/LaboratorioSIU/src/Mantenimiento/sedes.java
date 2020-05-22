@@ -1,17 +1,22 @@
 package Mantenimiento;
 
+import java.awt.Graphics;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Gerson
  */
 public class sedes extends javax.swing.JInternalFrame {
+    FondoPanel fondo = new FondoPanel();
 private static Connection con;
     private static final String driver = "com.mysql.jdbc.Driver";
     private static final String user = "root";
@@ -36,6 +41,7 @@ private static Connection con;
         }
     }
     public sedes() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -244,4 +250,15 @@ try {
     private javax.swing.JTextField txtestatus;
     private javax.swing.JTextField txtnombre;
     // End of variables declaration//GEN-END:variables
-}
+class FondoPanel extends JPanel
+{
+    private Image imagen;
+    @Override
+    public void paint(Graphics g){
+        imagen = new ImageIcon(getClass().getResource("/CONTENEDORMDI/fondonaranja.jpg")).getImage();
+        g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+        setOpaque(false);
+        super.paint(g);
+        
+    }
+}}

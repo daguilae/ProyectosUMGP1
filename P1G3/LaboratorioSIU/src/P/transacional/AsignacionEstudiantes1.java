@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package P.TRANSACCIONALES;
+package P.transacional;
 
 import java.awt.Graphics;
 import java.awt.Image;
@@ -16,13 +16,12 @@ import javax.swing.JOptionPane;
  *
  * @author Jacky
  */
-public class AsignacionEstudiante extends javax.swing.JInternalFrame {
+public class AsignacionEstudiantes1 extends javax.swing.JInternalFrame {
 FondoPanel fondo = new FondoPanel();
-
     /**
-     * Creates new form AsignacionEstudiante
+     * Creates new form AsignacionEstudiantes1
      */
-    public AsignacionEstudiante() {
+    public AsignacionEstudiantes1() {
         this.setContentPane(fondo);
         initComponents();
     }
@@ -36,15 +35,7 @@ FondoPanel fondo = new FondoPanel();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        txtnombre = new javax.swing.JTextField();
-        txtcorreo = new javax.swing.JTextField();
-        txtestatus = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        label1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -64,60 +55,15 @@ FondoPanel fondo = new FondoPanel();
         txtaula = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         txtcurso = new javax.swing.JTextField();
-        label1 = new javax.swing.JLabel();
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
-        setVisible(true);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel1.setText("Asignacion de cursos Alumnos");
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 102));
-
-        jLabel9.setText("Nombre:");
-
-        jLabel10.setText("Correo:");
-
-        jLabel11.setText("Estatus");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtcorreo)
-                    .addComponent(txtnombre)
-                    .addComponent(txtestatus)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(0, 180, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addGap(7, 7, 7)
-                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(jLabel10)
-                .addGap(2, 2, 2)
-                .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtestatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        txtnombre = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
+        txtestatus = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -183,6 +129,8 @@ FondoPanel fondo = new FondoPanel();
 
         jLabel7.setText("Codigo curso");
 
+        jButton3.setText("Buscar");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -210,7 +158,11 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(txtseccion)
                     .addComponent(txtjornada)
                     .addComponent(txtsede, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(112, 112, 112))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,7 +191,55 @@ FondoPanel fondo = new FondoPanel();
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("Asignacion de cursos Alumnos");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 102));
+
+        jLabel9.setText("Nombre:");
+
+        jLabel10.setText("Correo:");
+
+        jLabel11.setText("Estatus");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtcorreo)
+                    .addComponent(txtnombre)
+                    .addComponent(txtestatus)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(0, 180, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addGap(7, 7, 7)
+                .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel10)
+                .addGap(2, 2, 2)
+                .addComponent(txtcorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtestatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -256,21 +256,21 @@ FondoPanel fondo = new FondoPanel();
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12))
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(141, 141, 141))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(76, 76, 76)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel12)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(99, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(141, 141, 141))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,24 +283,51 @@ FondoPanel fondo = new FondoPanel();
                         .addComponent(jLabel12)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
+                        .addGap(31, 31, 31)
                         .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
+                        .addGap(75, 75, 75)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
+            PreparedStatement pst = cn.prepareStatement("insert into clientes2 values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
+
+            pst.setString(1, txtcodigo.getText().trim());
+            pst.setString(2, txtsede.getText().trim());
+            pst.setString(3, txtjornada.getText().trim());
+            pst.setString(4, txtseccion.getText().trim());
+            pst.setString(5, txtaula.getText().trim());
+            pst.setString(6, txtcurso.getText().trim());//Codigo de Seguridad
+            pst.executeUpdate();
+
+            txtcodigo.setText("");//Se limpia el txt
+            txtsede.setText("");//Se limpia el txt
+            txtjornada.setText("");//Se limpia el txt
+            txtseccion.setText("");//Se limpia el txt
+            txtaula.setText("");//Se limpia el txt
+            txtcurso.setText("");//Se limpia el txt
+            label1.setText("La cuenta se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         try {
+        try {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from alumnos where carnet_alumno = ?");
             pst.setString(1, txtbuscar.getText().trim());
@@ -310,7 +337,7 @@ FondoPanel fondo = new FondoPanel();
                 txtnombre.setText(rs.getString("nombre_alumno"));
                 txtcorreo.setText(rs.getString("email_alumno"));
                 txtestatus.setText(rs.getString("estatus_alumno"));
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "Persona no registrada.");
             }
@@ -320,40 +347,11 @@ FondoPanel fondo = new FondoPanel();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
-           
-            pst.setString(1, txtcodigo.getText().trim());
-            pst.setString(2, txtsede.getText().trim());
-            pst.setString(3, txtjornada.getText().trim());
-            pst.setString(4, txtseccion.getText().trim());
-            pst.setString(5, txtaula.getText().trim());
-            pst.setString(6, txtcurso.getText().trim());//Codigo de Seguridad
-            pst.setString(7, txtbuscar.getText().trim());
-            pst.executeUpdate();
-            
-            txtcodigo.setText("");//Se limpia el txt
-            txtsede.setText("");//Se limpia el txt
-            txtjornada.setText("");//Se limpia el txt
-            txtseccion.setText("");//Se limpia el txt
-            txtaula.setText("");//Se limpia el txt
-            txtcurso.setText("");//Se limpia el txt
-            txtbuscar.setText("");
-            label1.setText("La cuenta se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
