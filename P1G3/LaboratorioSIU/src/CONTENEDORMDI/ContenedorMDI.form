@@ -32,12 +32,20 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem6">
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jmenuMaestros">
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mantenimiento Maestros"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem6ActionPerformed"/>
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmenuMaestrosActionPerformed"/>
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
               </Events>
             </MenuItem>
           </SubComponents>
@@ -80,6 +88,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FacultadesActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mantenimiento aulas"/>
@@ -89,10 +98,14 @@
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+=======
+            <MenuItem class="javax.swing.JMenuItem" name="jmenuSecciones">
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
               <Properties>
                 <Property name="text" type="java.lang.String" value="Mantenimiento Secciones"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem5ActionPerformed"/>
               </Events>
             </MenuItem>
@@ -110,6 +123,9 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmenuSeccionesActionPerformed"/>
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
               </Events>
             </MenuItem>
           </SubComponents>

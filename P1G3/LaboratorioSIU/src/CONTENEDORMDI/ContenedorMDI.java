@@ -13,12 +13,15 @@ import Mantenimiento.Carreras;
 import Mantenimiento.MantenimientoAlumnos;
 import Mantenimiento.MantenimientoMaestros;
 import Mantenimiento.Secciones;
+<<<<<<< HEAD
 import Mantenimiento.jornadas;
 import Mantenimiento.sedes;
 import P.TRANSACCIONALES.AsignacionEstudiante;
 
 
 
+=======
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
 
 
 
@@ -53,15 +56,23 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+<<<<<<< HEAD
         jMenuItem6 = new javax.swing.JMenuItem();
+=======
+        jmenuMaestros = new javax.swing.JMenuItem();
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
         jMenu2 = new javax.swing.JMenu();
         Carreras = new javax.swing.JMenuItem();
         Cursos = new javax.swing.JMenuItem();
         Facultades = new javax.swing.JMenuItem();
+<<<<<<< HEAD
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+=======
+        jmenuSecciones = new javax.swing.JMenuItem();
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
         jMenu3 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
@@ -97,6 +108,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem2);
 
+<<<<<<< HEAD
         jMenuItem6.setText("Mantenimiento Maestros");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +116,15 @@ public class ContenedorMDI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jMenuItem6);
+=======
+        jmenuMaestros.setText("Mantenimiento Maestros");
+        jmenuMaestros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuMaestrosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmenuMaestros);
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
 
         jMenuBar1.add(jMenu1);
 
@@ -136,6 +157,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         });
         jMenu2.add(Facultades);
 
+<<<<<<< HEAD
         jMenuItem1.setText("Mantenimiento aulas");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +189,15 @@ public class ContenedorMDI extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem8);
+=======
+        jmenuSecciones.setText("Mantenimiento Secciones");
+        jmenuSecciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuSeccionesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmenuSecciones);
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
 
         jMenuBar1.add(jMenu2);
 
@@ -243,6 +274,7 @@ public class ContenedorMDI extends javax.swing.JFrame {
         p.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+<<<<<<< HEAD
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         Aulas p = new Aulas();
@@ -277,6 +309,19 @@ public class ContenedorMDI extends javax.swing.JFrame {
         jDesktopPane1.add(p);
         p.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+=======
+    private void jmenuSeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuSeccionesActionPerformed
+        Secciones secciones = new Secciones();
+        jDesktopPane1.add(secciones);
+        secciones.setVisible(true);
+    }//GEN-LAST:event_jmenuSeccionesActionPerformed
+
+    private void jmenuMaestrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuMaestrosActionPerformed
+        MantenimientoMaestros maestros = new MantenimientoMaestros();
+        jDesktopPane1.add(maestros);
+        maestros.setVisible(true);
+    }//GEN-LAST:event_jmenuMaestrosActionPerformed
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
 
     /**
      * @param args the command line arguments
@@ -330,10 +375,15 @@ public class ContenedorMDI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+<<<<<<< HEAD
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+=======
+    private javax.swing.JMenuItem jmenuMaestros;
+    private javax.swing.JMenuItem jmenuSecciones;
+>>>>>>> 9984805e2ff40b093bd2292536a914654c692dc2
     // End of variables declaration//GEN-END:variables
 
  
