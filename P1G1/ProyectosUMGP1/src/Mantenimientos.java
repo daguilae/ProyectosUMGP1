@@ -4,12 +4,7 @@
  * @author Tobar Arèvalo
  */
 
-
-
 import Modelo.UsuariosU;
-
-
-
 public class Mantenimientos extends javax.swing.JFrame {
 UsuariosU mod;
 
@@ -20,7 +15,7 @@ UsuariosU mod;
     private RegistroFacultades ventanafac;
     private RegistroCarreras ventanacarr;
     private RegistroCursos ventanacur;
-    ////////////////////////////////////////
+
     private RegistroSedes ventanasede;
     private RegistroAula ventanaaula;
     private RegistroJornadas ventanajor;
@@ -75,7 +70,8 @@ UsuariosU mod;
             
            
             
-        } else {
+        } 
+      else {
             NuevaVentana.setVisible(false);
            ventana.setVisible(false);
            ventanafac.setVisible(false);
@@ -103,7 +99,8 @@ UsuariosU mod;
             ventanajor.setVisible(true);
             ventanasec.setVisible(true);  
             
-              } else {
+              } 
+      else {
             ventanasede.setVisible(false);
            ventanaaula.setVisible(false);
            ventanajor.setVisible(false);
@@ -122,7 +119,8 @@ UsuariosU mod;
             ventanaModAula.setVisible(true);
             ventanaModJornada.setVisible(true);
             ventanaModSec.setVisible(true);
-            } else {
+            } 
+      else {
            ventanaModAlum.setVisible(false);
             ventanaModMaes.setVisible(false);
             ventanaModFacul.setVisible(false);
@@ -135,7 +133,7 @@ UsuariosU mod;
         }  
         
     
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
