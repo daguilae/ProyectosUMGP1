@@ -192,7 +192,7 @@ try {
             String ID = txtbuscar.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update sedess set sede_aula = ?, sede_aula = ?, sede_aula= ? where codigo_sede=?");
+            PreparedStatement pst = cn.prepareStatement("update sedes set codigo_sede = ?, nombre_sede = ?, estatus_sede= ? where codigo_sede=?");
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtnombre.getText().trim());
@@ -204,7 +204,7 @@ try {
             txtcodigo.setText("");
             txtnombre.setText("");
             txtbuscar.setText("");
-            Label1.setText("Sede Modificado.");
+            Label1.setText("Sede Modificada.");
 
         } catch (Exception e) {
             System.out.print(e.getMessage());
