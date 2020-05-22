@@ -186,7 +186,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // MANTENIMIENTO DE FACULTADES REALIZADO POR LUIS SOSA A LA 1:15 PM
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into facultades values(?,?,?)");//Inserta los datos en la tabla
            
             pst.setString(1, txtcodigo.getText().trim());//Codigo
@@ -208,7 +208,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from facultades where codigo_facultad = ?");
             pst.setString(1, Buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -230,7 +230,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from facultades where codigo_facultad = ?");
 
             pst.setString(1, Buscar.getText().trim());
@@ -251,7 +251,7 @@ FondoPanel fondo = new FondoPanel();
          try {
             String Codigo = Buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("update facultades set codigo_facultad= ?,nombre_facultad = ?,estatus_facultad = ?, codigo_facultad = "+ Codigo);
 
             pst.setString(1, txtcodigo.getText().trim());

@@ -189,7 +189,7 @@ FondoPanel fondo = new FondoPanel();
         
         //MANTENIMINETO DE CARRERA REALIZADO POR LUIS SOSA A LAS 12:30 PM
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into carreras1 values(?,?,?,?)");//Inserta los datos en la tabla
            
             pst.setString(1, txtcodigo.getText().trim());//Codigo
@@ -213,7 +213,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from carreras1 where codigo_carrera = ?");
 
             pst.setString(1, Buscar.getText().trim());
@@ -232,7 +232,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from carreras1 where codigo_carrera = ?");
             pst.setString(1, Buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -257,7 +257,7 @@ FondoPanel fondo = new FondoPanel();
        try {
             String Codigo = Buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto1", "root", "");
             PreparedStatement pst = cn.prepareStatement("update carreras1 set codigo_carrera= ?,nombre_carrera = ?,codigo_facultad = ?,estatus_carrera=? where codigo_carrera = "+ Codigo);
 
            pst.setString(1, txtcodigo.getText().trim());//Codigo
