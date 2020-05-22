@@ -1,9 +1,11 @@
 
-package vista;
+
+
 import Modelo.Hash;
 import javax.swing.JOptionPane;
 import Modelo.SqlUsuariosU;
 import Modelo.UsuariosU;
+//import modificaciones.Mantenimientos;
 
 
 
@@ -98,22 +100,23 @@ public class LoginA extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BTON_ENTRARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTON_ENTRARActionPerformed
+        
         SqlUsuariosU modSql = new SqlUsuariosU();
         UsuariosU mod = new UsuariosU();
 
@@ -123,15 +126,15 @@ public class LoginA extends javax.swing.JFrame {
 
             String nuevoPass = Hash.sha1(pass);
 
-            mod.setUsuario(txtUsuario.getText());
+            mod.setUsuario(txtUsuario.getText());     // creado por Nayre
             mod.setPassword(nuevoPass);
 
             if (modSql.login(mod)) {
                 Inicio.frmLog = null;
                 this.dispose();
 
-             // Mantenimiento frmMenu = new Mantenimiento (mod);
-               // frmMenu.setVisible(true);
+             Mantenimientos frmMenu = new Mantenimientos (mod);
+               frmMenu.setVisible(true);
 
             } else {
                 JOptionPane.showMessageDialog(null, " Datos incorrectos al Ingresar ");
@@ -140,8 +143,17 @@ public class LoginA extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, " Debe ingresar sus datos Correctamente");
         }
+     
     }//GEN-LAST:event_BTON_ENTRARActionPerformed
 
+     private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+        Inicio.frmLog = null;
+    }                                  
+    
+    private void limpiar() {
+        txtUsuario.setText("");
+        txtContraseña.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -168,6 +180,7 @@ public class LoginA extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LoginA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -186,7 +199,4 @@ public class LoginA extends javax.swing.JFrame {
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
-    private void limpiar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
