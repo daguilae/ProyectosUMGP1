@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 
 /**
  *
- * @author Gerson
+ * @author Gerson  XD
  */
 public class jornadas extends javax.swing.JInternalFrame {
 private static Connection con;
