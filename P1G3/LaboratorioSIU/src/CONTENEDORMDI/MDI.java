@@ -14,6 +14,7 @@ import Mantenimiento.Secciones;
 import Mantenimiento.jornadas;
 import Mantenimiento.sedes;
 import P.TRANSACCIONALES.AsignacionEstudiante;
+import P.transacional.AsignacionMaestros;
 /**
  *
  * @author Jacky
@@ -240,7 +241,7 @@ public class MDI extends javax.swing.JFrame {
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        MantenimientoMaestros p = new MantenimientoMaestros();
+        AsignacionMaestros p = new AsignacionMaestros();
         jDesktopPane1.add(p);
         p.setVisible(true);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
