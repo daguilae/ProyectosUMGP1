@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+
+import Modelo.Hash;
 
 /**
  *
@@ -95,7 +96,7 @@ public static RegistroUsuario frmReg; // LA VARIABLE DESIGNADA PARA LLAMAR LA VE
 
     private void LogAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogAdminActionPerformed
         if (frmLog == null) {    // BOTON PARA LLAMADO DE VENTANA LOGIN ADMINISTRADOR
-            frmLog = new LoginA();
+            frmLog = new LoginA();   //creado por Nayre
             frmLog.setVisible(true);
         }
 
@@ -103,9 +104,8 @@ public static RegistroUsuario frmReg; // LA VARIABLE DESIGNADA PARA LLAMAR LA VE
 
     private void LogRusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogRusuarioActionPerformed
         if (frmReg == null) {  // BOTON PARA LLAMADO DE VENTANA REGISTRO DE USUARIOS
-
             frmReg = new RegistroUsuario();
-            frmReg.setVisible(true);
+            frmReg.setVisible(true);    /// creado por Nayre
         }
 
     }//GEN-LAST:event_LogRusuarioActionPerformed
@@ -135,6 +135,7 @@ public static RegistroUsuario frmReg; // LA VARIABLE DESIGNADA PARA LLAMAR LA VE
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
