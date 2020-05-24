@@ -47,93 +47,39 @@ UsuariosU mod;
     initComponents();
     //* creado por Nayre
     
-    
+    ///* aqui se declaran ventanas de mantenimiento se veran en cada usuario y administrador 
     setLocationRelativeTo(null);
     this.mod = mod;
 
-    if (mod.getIdTipo() == 1) {   //* se declaran la llamada de las ventanas al Admnin
-    NuevaVentana.setVisible(true);
-    ventana.setVisible(true);
-    ventanafac.setVisible(true);
-    ventanacarr.setVisible(true);
-    ventanacur.setVisible(true);  ///* Creado por Nayre
-    ventanasede.setVisible(true);
-     
-            ventanaaula.setVisible(true);
-            ventanajor.setVisible(true);
-            ventanasec.setVisible(true); 
-            
-            ventanaModAlum.setVisible(true);
-            ventanaModMaes.setVisible(true);
-            ventanaModFacul.setVisible(true);
-            ventanaModCarr.setVisible(true);
-            ventanaModcur.setVisible(true);
-            ventanaModSede.setVisible(true);
-            ventanaModAula.setVisible(true);
-            ventanaModJornada.setVisible(true);
-            ventanaModSec.setVisible(true);
-            
-           
-            
-        } else {
-            NuevaVentana.setVisible(false);
-           ventana.setVisible(false);
-           ventanafac.setVisible(false);
-           ventanacarr.setVisible(false);
-           ventanacur.setVisible(false);
-           
-         ventanasede.setVisible(false);
-           ventanaaula.setVisible(false);
-           ventanajor.setVisible(false);
-           ventanasec.setVisible(false);   
-           
-           ventanaModAlum.setVisible(false);
-            ventanaModMaes.setVisible(false);
-            ventanaModFacul.setVisible(false);
-            ventanaModCarr.setVisible(false);
-            ventanaModcur.setVisible(false);
-            ventanaModSede.setVisible(false);
-            ventanaModAula.setVisible(false);
-            ventanaModJornada.setVisible(false);
-            ventanaModSec.setVisible(false);
-        }  
-       if (mod.getIdTipo() == 2) {
-            ventanasede.setVisible(true);
-            ventanaaula.setVisible(true);
-            ventanajor.setVisible(true);
-            ventanasec.setVisible(true);  
-            
-              } else {
-            ventanasede.setVisible(false);
-           ventanaaula.setVisible(false);
-           ventanajor.setVisible(false);
-           ventanasec.setVisible(false);
-           
-        }  
-              
-        
-        if (mod.getIdTipo() == 3) {
-            ventanaModAlum.setVisible(true);
-            ventanaModMaes.setVisible(true);
-            ventanaModFacul.setVisible(true);
-            ventanaModCarr.setVisible(true);
-            ventanaModcur.setVisible(true);
-            ventanaModSede.setVisible(true);
-            ventanaModAula.setVisible(true);
-            ventanaModJornada.setVisible(true);
-            ventanaModSec.setVisible(true);
-            } else {
-           ventanaModAlum.setVisible(false);
-            ventanaModMaes.setVisible(false);
-            ventanaModFacul.setVisible(false);
-            ventanaModCarr.setVisible(false);
-            ventanaModcur.setVisible(false);
-            ventanaModSede.setVisible(false);
-            ventanaModAula.setVisible(false);
-            ventanaModJornada.setVisible(false);
-            ventanaModSec.setVisible(false);
-        }  
-        
+    if (mod.getIdTipo() == 2) {   //* se declaran la llamada de las ventanas al Admin
+     jMenu1.setVisible(true);
+    ModificarAlumno.setVisible(true);
+    jMenu5.setVisible(true);
+    jMenu3.setVisible(true);
+    }else{
+         jMenu1.setVisible(true);     //* creado por Nayre
+    ModificarAlumno.setVisible(true);
+    jMenu5.setVisible(true);
+    jMenu3.setVisible(true);
+    }
+       if (mod.getIdTipo() == 1) {   //* se declaran la llamada de las ventanas al Admnin
+     jMenu1.setVisible(true);
+    ModificarAlumno.setVisible(true);
+    jMenu5.setVisible(true);
+    jMenu3.setVisible(true);
+    }else{
+         jMenu1.setVisible(false);
+    ModificarAlumno.setVisible(false);
+    jMenu5.setVisible(true);
+    jMenu3.setVisible(true);
+    }
+           if (mod.getIdTipo() == 3) {   //* se declaran la llamada de las ventanas al usuario 2
+     jMenu1.setVisible(false);
+    jMenu3.setVisible(false);
+    }else{
+         jMenu1.setVisible(true);
+    jMenu3.setVisible(true);
+    }
     
     }
     @SuppressWarnings("unchecked")
@@ -176,11 +122,11 @@ UsuariosU mod;
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGap(0, 531, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGap(0, 424, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 0));

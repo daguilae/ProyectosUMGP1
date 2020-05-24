@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+
+
 import Modelo.Hash;
 import javax.swing.JOptionPane;
 import Modelo.SqlUsuariosU;
@@ -170,7 +171,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
 
         if (modSql.existeUsuario(txtUsuario.getText()) == 0) {
 
-        if (modSql.esEmail(txtEmail.getText())) {
+        if (modSql.esEmail(txtEmail.getText())) {    //creado por Nayre
 
         String nuevoPass = Hash.sha1(pass);
 
@@ -199,6 +200,19 @@ public class RegistroUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+
+        Inicio.frmReg = null;
+
+    }                                  
+
+    private void limpiar() {
+        txtUsuario.setText("");
+        txtPassword.setText("");
+        txtConfirmaPassword.setText("");
+        txtNombre.setText("");
+        txtEmail.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -225,6 +239,7 @@ public class RegistroUsuario extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(RegistroUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -249,7 +264,4 @@ public class RegistroUsuario extends javax.swing.JFrame {
     public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
-    private void limpiar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
