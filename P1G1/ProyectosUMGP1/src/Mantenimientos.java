@@ -47,6 +47,7 @@ UsuariosU mod;
     setLocationRelativeTo(null);
     this.mod = mod;
 
+
     if (mod.getIdTipo() == 2) {   //* se declaran la llamada de las ventanas al Admin
      jMenu1.setVisible(true);
     ModificarAlumno.setVisible(true);
@@ -76,7 +77,93 @@ UsuariosU mod;
          jMenu1.setVisible(true);
     jMenu3.setVisible(true);
     }
-    
+
+    if (mod.getIdTipo() == 1) {   //* se declaran la llamada de las ventanas al Admnin
+    NuevaVentana.setVisible(true);
+    ventana.setVisible(true);
+    ventanafac.setVisible(true);
+    ventanacarr.setVisible(true);
+    ventanacur.setVisible(true);  ///* Creado por Nayre
+    ventanasede.setVisible(true);
+     
+            ventanaaula.setVisible(true);
+            ventanajor.setVisible(true);
+            ventanasec.setVisible(true); 
+            
+            ventanaModAlum.setVisible(true);
+            ventanaModMaes.setVisible(true);
+            ventanaModFacul.setVisible(true);
+            ventanaModCarr.setVisible(true);
+            ventanaModcur.setVisible(true);
+            ventanaModSede.setVisible(true);
+            ventanaModAula.setVisible(true);
+            ventanaModJornada.setVisible(true);
+            ventanaModSec.setVisible(true);
+            
+           
+            
+        } 
+      else {
+            NuevaVentana.setVisible(false);
+           ventana.setVisible(false);
+           ventanafac.setVisible(false);
+           ventanacarr.setVisible(false);
+           ventanacur.setVisible(false);
+           
+         ventanasede.setVisible(false);
+           ventanaaula.setVisible(false);
+           ventanajor.setVisible(false);
+           ventanasec.setVisible(false);   
+           
+           ventanaModAlum.setVisible(false);
+            ventanaModMaes.setVisible(false);
+            ventanaModFacul.setVisible(false);
+            ventanaModCarr.setVisible(false);
+            ventanaModcur.setVisible(false);
+            ventanaModSede.setVisible(false);
+            ventanaModAula.setVisible(false);
+            ventanaModJornada.setVisible(false);
+            ventanaModSec.setVisible(false);
+        }  
+       if (mod.getIdTipo() == 2) {
+            ventanasede.setVisible(true);
+            ventanaaula.setVisible(true);
+            ventanajor.setVisible(true);
+            ventanasec.setVisible(true);  
+            
+              } 
+      else {
+            ventanasede.setVisible(false);
+           ventanaaula.setVisible(false);
+           ventanajor.setVisible(false);
+           ventanasec.setVisible(false);
+           
+        }  
+              
+        
+        if (mod.getIdTipo() == 3) {
+            ventanaModAlum.setVisible(true);
+            ventanaModMaes.setVisible(true);
+            ventanaModFacul.setVisible(true);
+            ventanaModCarr.setVisible(true);
+            ventanaModcur.setVisible(true);
+            ventanaModSede.setVisible(true);
+            ventanaModAula.setVisible(true);
+            ventanaModJornada.setVisible(true);
+            ventanaModSec.setVisible(true);
+            } 
+      else {
+           ventanaModAlum.setVisible(false);
+            ventanaModMaes.setVisible(false);
+            ventanaModFacul.setVisible(false);
+            ventanaModCarr.setVisible(false);
+            ventanaModcur.setVisible(false);
+            ventanaModSede.setVisible(false);
+            ventanaModAula.setVisible(false);
+            ventanaModJornada.setVisible(false);
+            ventanaModSec.setVisible(false);
+        }  
+        
     }
 
     @SuppressWarnings("unchecked")
