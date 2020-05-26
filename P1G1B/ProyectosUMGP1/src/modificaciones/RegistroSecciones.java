@@ -82,7 +82,7 @@ public class RegistroSecciones extends javax.swing.JInternalFrame {
         jLabel5.setText("Codigo");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
-        jLabel7.setText("Registro Sección");
+        jLabel7.setText("Registro Secciónes");
 
         jLabel6.setBackground(new java.awt.Color(204, 255, 204));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -106,9 +106,6 @@ public class RegistroSecciones extends javax.swing.JInternalFrame {
                             .addComponent(Codigo_sec, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Nombre_sec, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ventaLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ventaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
@@ -119,8 +116,11 @@ public class RegistroSecciones extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(ventaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton1)
-                                    .addComponent(jLabel6))))))
-                .addContainerGap(129, Short.MAX_VALUE))
+                                    .addComponent(jLabel6)))))
+                    .addGroup(ventaLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel7)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         ventaLayout.setVerticalGroup(
             ventaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +145,7 @@ public class RegistroSecciones extends javax.swing.JInternalFrame {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(249, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
