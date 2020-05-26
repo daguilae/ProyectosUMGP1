@@ -233,7 +233,7 @@ public class ADCA extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Codigo que permite insertar registros en al base de datos
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/siu", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siu", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?,?,?)");
             /*-----------------------------------------------------------------------------------------------------------------------*/
             pst.setString(1, cod_carrera.getText().trim());
@@ -264,7 +264,7 @@ public class ADCA extends javax.swing.JInternalFrame {
         //Codigo que permite consultar las asignaciones en la base de datos
         try{
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3307/siu", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siu", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from asignacioncursosalumnos where ID = ?");
 
             /*-----------------------------------------------------------------------------------------------------------------------*/
