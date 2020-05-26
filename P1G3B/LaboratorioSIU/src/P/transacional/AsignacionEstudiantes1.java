@@ -64,6 +64,7 @@ FondoPanel fondo = new FondoPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         jButton2.setBackground(new java.awt.Color(255, 204, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -242,6 +243,8 @@ FondoPanel fondo = new FondoPanel();
                 .addContainerGap())
         );
 
+        jLabel13.setText("Cambio version2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -269,6 +272,8 @@ FondoPanel fondo = new FondoPanel();
                                 .addComponent(jButton2)
                                 .addGap(141, 141, 141))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39))))))
         );
@@ -284,7 +289,9 @@ FondoPanel fondo = new FondoPanel();
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
                         .addGap(75, 75, 75)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
@@ -318,7 +325,7 @@ FondoPanel fondo = new FondoPanel();
             txtseccion.setText("");//Se limpia el txt
             txtaula.setText("");//Se limpia el txt
             txtcurso.setText("");//Se limpia el txt
-            label1.setText("La cuenta se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
+            label1.setText("La cuenta de alumnos se registró");//Mensaje que aparecera en pantalla al momento de que ingrese datos a la base de datos
 
         }catch (Exception e){
             e.printStackTrace();
@@ -339,7 +346,7 @@ FondoPanel fondo = new FondoPanel();
                 txtestatus.setText(rs.getString("estatus_alumno"));
 
             } else {
-                JOptionPane.showMessageDialog(null, "Persona no registrada.");
+                JOptionPane.showMessageDialog(null, "Alumno no registrada.");
             }
 
         }catch (Exception e){
@@ -356,6 +363,7 @@ FondoPanel fondo = new FondoPanel();
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
