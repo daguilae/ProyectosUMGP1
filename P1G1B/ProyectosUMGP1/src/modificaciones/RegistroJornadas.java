@@ -70,7 +70,7 @@ public class RegistroJornadas extends javax.swing.JInternalFrame {
         jLabel5.setText("Codigo");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
-        jLabel7.setText("Registro Jornada");
+        jLabel7.setText("Registro Jornadas");
 
         jLabel6.setBackground(new java.awt.Color(204, 255, 204));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
