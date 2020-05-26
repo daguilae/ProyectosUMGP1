@@ -79,7 +79,7 @@ UsuariosU mod;
     jMenu3.setVisible(true);
     }
 
-    if (mod.getIdTipo() == 1) {   //* se declaran la llamada de las ventanas al Admnin
+    /*if (mod.getIdTipo() == 1) {   //* se declaran la llamada de las ventanas al Admnin
     NuevaVentana.setVisible(true);
     ventana.setVisible(true);
     ventanafac.setVisible(true);
@@ -163,7 +163,7 @@ UsuariosU mod;
             ventanaModAula.setVisible(false);
             ventanaModJornada.setVisible(false);
             ventanaModSec.setVisible(false);
-        }  
+        }  */
         
     }
 
@@ -173,6 +173,7 @@ UsuariosU mod;
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         RegistroAlumno = new javax.swing.JMenuItem();
@@ -203,16 +204,27 @@ UsuariosU mod;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("proyecto II (prueba)");
+
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 424, Short.MAX_VALUE)
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(372, Short.MAX_VALUE))
         );
+        jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 0));
         jMenuBar1.setForeground(new java.awt.Color(255, 255, 0));
@@ -617,6 +629,7 @@ UsuariosU mod;
     private javax.swing.JMenuItem RegistroMaestro;
     private javax.swing.JMenuItem SalirPrograma;
     public static javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     public javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
