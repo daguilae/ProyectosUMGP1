@@ -31,7 +31,8 @@ UsuariosU mod;
     private ModificacionJornadas ventanaModJornada;
     private ModificacionSecciones ventanaModSec;
 
-
+    //JInternalFrame para asignacion de cursos a alumnos
+    private ADCA ventanaasignacion;
 
    
   public Mantenimientos() {
@@ -493,7 +494,8 @@ UsuariosU mod;
     }//GEN-LAST:event_EliminarMaestro1ActionPerformed
 
     private void AsignacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AsignacionActionPerformed
-        // TODO add your handling code here:
+        ventanaasignacion = new ADCA();
+        jDesktopPane1.add(ventanaasignacion);
     }//GEN-LAST:event_AsignacionActionPerformed
 
     private void RegistrarSedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarSedeActionPerformed
