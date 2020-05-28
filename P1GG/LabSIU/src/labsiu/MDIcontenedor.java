@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package labsiu;
+// Fecha 28 mayo 2020
 
 import javax.swing.JOptionPane;
 
@@ -84,7 +85,7 @@ public class MDIcontenedor extends javax.swing.JFrame {
 
         mnuCatalogos.setText("Catalogos");
 
-        mnuProductos.setText("Mantenimiento Productos");
+        mnuProductos.setText("Mantenimiento Prueba");
         mnuProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mnuProductosActionPerformed(evt);
