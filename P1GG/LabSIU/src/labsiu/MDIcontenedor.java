@@ -124,7 +124,7 @@ public class MDIcontenedor extends javax.swing.JFrame {
 
     private void mnuProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProductosActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Entre a Mantenimiento Productos");
+        // JOptionPane.showMessageDialog(null, "Entre a Mantenimiento Productos");
        //  if (winMantenimientoTienda == null || winMantenimientoTienda.isClosed()) {
              winMantenimientoTienda = new MantenimientoTiendax();
              jDesktopPane1.add(winMantenimientoTienda);
