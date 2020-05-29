@@ -28,6 +28,19 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Procesos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuProcesosActionPerformed"/>
+          </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnuProcesosAsignacionAlumnos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Asignaci&#xf3;n Alumnos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuProcesosAsignacionAlumnosActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuReportes">
           <Properties>
