@@ -19,7 +19,8 @@ public class MDIcontenedor extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    private MantenimientoTiendax winMantenimientoTienda=null;
+   // private MantenimientoTiendax winMantenimientoTienda=null;
+    private Asignacion_cursos_alumnox winMnuProcesosAsignacionAlumnos;
     
     public MDIcontenedor() {
         initComponents();
@@ -60,6 +61,7 @@ public class MDIcontenedor extends javax.swing.JFrame {
         mnuCatalogos = new javax.swing.JMenu();
         mnuProductos = new javax.swing.JMenuItem();
         mnuProcesos = new javax.swing.JMenu();
+        mnuProcesosAsignacionAlumnos = new javax.swing.JMenuItem();
         mnuReportes = new javax.swing.JMenu();
         mnuSeguridad = new javax.swing.JMenu();
         mnuAyuda = new javax.swing.JMenu();
@@ -96,6 +98,20 @@ public class MDIcontenedor extends javax.swing.JFrame {
         jMenuBar1.add(mnuCatalogos);
 
         mnuProcesos.setText("Procesos");
+        mnuProcesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesosActionPerformed(evt);
+            }
+        });
+
+        mnuProcesosAsignacionAlumnos.setText("Asignación Alumnos");
+        mnuProcesosAsignacionAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesosAsignacionAlumnosActionPerformed(evt);
+            }
+        });
+        mnuProcesos.add(mnuProcesosAsignacionAlumnos);
+
         jMenuBar1.add(mnuProcesos);
 
         mnuReportes.setText("Reportes");
@@ -127,13 +143,24 @@ public class MDIcontenedor extends javax.swing.JFrame {
         // TODO add your handling code here:
         // JOptionPane.showMessageDialog(null, "Entre a Mantenimiento Productos");
        //  if (winMantenimientoTienda == null || winMantenimientoTienda.isClosed()) {
-             winMantenimientoTienda = new MantenimientoTiendax();
-             jDesktopPane1.add(winMantenimientoTienda);
+             //winMantenimientoTienda = new MantenimientoTiendax();
+            // jDesktopPane1.add(winMantenimientoTienda);
         //}
      
 
             
     }//GEN-LAST:event_mnuProductosActionPerformed
+
+    private void mnuProcesosAsignacionAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosAsignacionAlumnosActionPerformed
+        // TODO add your handling code here:
+         winMnuProcesosAsignacionAlumnos = new Asignacion_cursos_alumnox();
+             jDesktopPane1.add(winMnuProcesosAsignacionAlumnos);
+    }//GEN-LAST:event_mnuProcesosAsignacionAlumnosActionPerformed
+
+    private void mnuProcesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_mnuProcesosActionPerformed
 
     /**
          * @param args the command line arguments
@@ -180,6 +207,7 @@ public class MDIcontenedor extends javax.swing.JFrame {
     private javax.swing.JMenu mnuAyuda;
     private javax.swing.JMenu mnuCatalogos;
     private javax.swing.JMenu mnuProcesos;
+    private javax.swing.JMenuItem mnuProcesosAsignacionAlumnos;
     private javax.swing.JMenuItem mnuProductos;
     private javax.swing.JMenu mnuReportes;
     private javax.swing.JMenu mnuSeguridad;
